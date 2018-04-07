@@ -6,14 +6,16 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 16:43:56 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/07 22:53:15 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/07 23:56:19 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** TODO:	[X] Check args
 **			[X] Error and exit function
-**			[ ] Check if file exist
+**			[X] Define colors
+**			[X] Check if file exist
+**			[ ] Set array to doule array
 **			[ ] Check I shape
 **			[ ] Check J shape
 **			[ ] Check L shape
@@ -37,7 +39,7 @@
 
 void	ft_strerror(void)
 {
-	ft_putendl("error");
+	ft_putendl(CT_RED CB_YELLOW "error" C_RESET);
 	exit(EXIT_FAILURE);
 }
 
