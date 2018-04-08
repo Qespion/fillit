@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 23:08:43 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/08 23:21:12 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,16 @@ int		checkLW(char **tab);
 // Tetrio.c
 int		checkO(char **tab);
 int		checkON(char **tab);
+
+// Tetrit.c
+int		checkT(char **tab);
+int		checkTN(char **tab);
+int		checkTE(char **tab);
+int		checkTS(char **tab);
+int		checkTW(char **tab);
+
+// Tetris.c
+
+// Tetriz.c
 
 #endif

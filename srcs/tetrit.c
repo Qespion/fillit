@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tetril.c                                           :+:      :+:    :+:   */
+/*   tetrit.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/08 22:56:53 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 23:16:23 by groussel         ###   ########.fr       */
+/*   Created: 2018/04/08 23:12:22 by groussel          #+#    #+#             */
+/*   Updated: 2018/04/08 23:20:16 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,40 @@
 #include "fillit.h"
 #include "libft.h"
 
-int		checkL(char **tab)
+int		checkT(char **tab)
 {
-	if (!checkLN(tab) && !checkLE(tab) && !checkLS(tab) && !checkLW(tab))
+	if (!checkTN(tab) && !checkTE(tab) && !checkTS(tab) && !checkTW(tab))
 		return (0);
 	return (1);
 }
 
-// #
+//  #
+// ###
+
+int		checkTN(char **tab)
+{
+	int		x;
+	int		y;
+
+	y = -1;
+	while (++y < 4)
+	{
+		x = -1;
+		while (++x < 4)
+		{
+			if (tab[y][x] == '#' && tab[y + 1][x - 1] == '#' &&
+					tab[y + 1][x] == '#' && tab[y + 1][x + 1] == '#')
+				return (1);
+		}
+	}
+	return (0);
+}
+
 // #
 // ##
+// #
 
-int		checkLN(char **tab)
+int		checkTE(char **tab)
 {
 	int		x;
 	int		y;
@@ -45,7 +67,7 @@ int		checkLN(char **tab)
 		while (++x < 4)
 		{
 			if (tab[y][x] == '#' && tab[y + 1][x] == '#' &&
-					tab[y + 2][x] == '#' && tab[y + 2][x + 1] == '#')
+					tab[y + 1][x + 1] == '#' && tab[y + 2][x] == '#')
 				return (1);
 		}
 	}
@@ -53,9 +75,9 @@ int		checkLN(char **tab)
 }
 
 // ###
-// #
+//  #
 
-int		checkLE(char **tab)
+int		checkTS(char **tab)
 {
 	int		x;
 	int		y;
@@ -67,40 +89,18 @@ int		checkLE(char **tab)
 		while (++x < 4)
 		{
 			if (tab[y][x] == '#' && tab[y][x + 1] == '#' &&
-					tab[y][x + 2] == '#' && tab[y + 1][x] == '#')
+					tab[y + 1][x + 1] == '#' && tab[y][x + 2] == '#')
 				return (1);
 		}
 	}
 	return (0);
 }
 
+//  #
 // ##
-// 	#
-// 	#
+//  #
 
-int		checkLS(char **tab)
-{
-	int		x;
-	int		y;
-
-	y = -1;
-	while (++y < 4)
-	{
-		x = -1;
-		while (++x < 4)
-		{
-			if (tab[y][x] == '#' && tab[y][x + 1] == '#' &&
-					tab[y + 1][x + 1] == '#' && tab[y + 2][x + 1] == '#')
-				return (1);
-		}
-	}
-	return (0);
-}
-
-//   #
-// ###
-
-int		checkLW(char **tab)
+int		checkTW(char **tab)
 {
 	int		x;
 	int		y;
@@ -112,7 +112,7 @@ int		checkLW(char **tab)
 		while (++x < 4)
 		{
 			if (tab[y][x] == '#' && tab[y + 1][x] == '#' &&
-					tab[y + 1][x - 1] == '#' && tab[y + 1][x - 2] == '#')
+					tab[y + 1][x - 1] == '#' && tab[y + 2][x] == '#')
 				return (1);
 		}
 	}
