@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:42:19 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 21:46:49 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/08 22:55:30 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 **			[X] Free all malloc in strerror
 **			[X] Check chars in square (4# 4\n 12.)
 **			[X] Check I shape
-**			[ ] Check J shape
+**			[X] Check J shape
 **			[ ] Check L shape
 **			[ ] Check O shape
 **			[ ] Check S shape
@@ -66,16 +66,12 @@ int		checkshape(char *square)
 		return (-1);
 	tab = ft_strsplit(square, '\n');
 	f[0] = checkI;
-	//f[1] = checkJ;
+	f[1] = checkJ;
 	//f[2] = checkL;
 	//f[3] = checkO;
 	//f[4] = checkS;
 	//f[5] = checkT;
 	//f[6] = checkZ;
-	ft_putendl(tab[0]);
-	ft_putendl(tab[1]);
-	ft_putendl(tab[2]);
-	ft_putendl(tab[3]);
 	i = -1;
 	while (++i < 1)
 		if (f[i](tab))

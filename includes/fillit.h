@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 18:15:32 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/08 23:05:49 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,19 @@ int		checkchars(char *square);
 int		checkI(char **tab);
 int		checkIH(char **tab);
 int		checkIV(char **tab);
+
+// Tetrij.c
+int		checkJ(char **tab);
+int		checkJN(char **tab);
+int		checkJE(char **tab);
+int		checkJS(char **tab);
+int		checkJW(char **tab);
+
+// Tetril.c
+int		checkL(char **tab);
+int		checkLN(char **tab);
+int		checkLE(char **tab);
+int		checkLS(char **tab);
+int		checkLW(char **tab);
 
 #endif

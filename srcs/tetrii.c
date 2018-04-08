@@ -6,17 +6,15 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 20:10:44 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 21:41:16 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/08 22:53:04 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-**  ####
+** TODO:	[X] Check horizontaly
+**			[X] Check verticaly
 **
-**	#
-**	#
-**	#
-**	#
+** FIXME:	[ ] Nothing yet
 */
 
 #include "fillit.h"
@@ -29,7 +27,9 @@ int		checkI(char **tab)
 	return (1);
 }
 
-int		checkIH(char **tab)				// check shape horizontaly
+// ####
+
+int		checkIH(char **tab)
 {
 	int		y;
 
@@ -43,7 +43,12 @@ int		checkIH(char **tab)				// check shape horizontaly
 	return (0);
 }
 
-int		checkIV(char **tab)				// check shape verticaly
+// #
+// #
+// #
+// #
+
+int		checkIV(char **tab)
 {
 	int		x;
 

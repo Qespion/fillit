@@ -6,7 +6,7 @@
 #    By: groussel <groussel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/07 16:25:30 by groussel          #+#    #+#              #
-#    Updated: 2018/04/08 21:45:41 by groussel         ###   ########.fr        #
+#    Updated: 2018/04/08 23:05:57 by groussel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ LIB_DIR	=	libft/
 
 SRC_BAS	=	main.c		\
 			check.c		\
-			tetrii.c
+			tetrii.c	\
+			tetrij.c	\
+			tetril.c
 
 SRCS	=	$(addprefix $(SRC_DIR), $(SRC_BAS))
 OBJS	=	$(addprefix $(OBJ_DIR), $(SRC_BAS:.c=.o))
