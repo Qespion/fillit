@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 23:12:22 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 23:20:16 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 01:12:31 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ int		checkTN(char **tab)
 	int		y;
 
 	y = -1;
-	while (++y < 4)
+	while (++y < 3)
 	{
-		x = -1;
-		while (++x < 4)
+		x = 0;
+		while (++x < 3)
 		{
 			if (tab[y][x] == '#' && tab[y + 1][x - 1] == '#' &&
 					tab[y + 1][x] == '#' && tab[y + 1][x + 1] == '#')
@@ -61,10 +61,10 @@ int		checkTE(char **tab)
 	int		y;
 
 	y = -1;
-	while (++y < 4)
+	while (++y < 2)
 	{
 		x = -1;
-		while (++x < 4)
+		while (++x < 3)
 		{
 			if (tab[y][x] == '#' && tab[y + 1][x] == '#' &&
 					tab[y + 1][x + 1] == '#' && tab[y + 2][x] == '#')
@@ -83,10 +83,10 @@ int		checkTS(char **tab)
 	int		y;
 
 	y = -1;
-	while (++y < 4)
+	while (++y < 3)
 	{
 		x = -1;
-		while (++x < 4)
+		while (++x < 2)
 		{
 			if (tab[y][x] == '#' && tab[y][x + 1] == '#' &&
 					tab[y + 1][x + 1] == '#' && tab[y][x + 2] == '#')
@@ -106,9 +106,9 @@ int		checkTW(char **tab)
 	int		y;
 
 	y = -1;
-	while (++y < 4)
+	while (++y < 2)
 	{
-		x = -1;
+		x = 0;
 		while (++x < 4)
 		{
 			if (tab[y][x] == '#' && tab[y + 1][x] == '#' &&

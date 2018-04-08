@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 23:07:30 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 23:08:20 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 01:06:20 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ int		checkON(char **tab)
 	int		y;
 
 	y = -1;
-	while (++y < 4)
+	while (++y < 3)
 	{
 		x = -1;
-		while (++x < 4)
+		while (++x < 3)
 		{
 			if (tab[y][x] == '#' && tab[y][x + 1] == '#' &&
 					tab[y + 1][x] == '#' && tab[y + 1][x + 1] == '#')

@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:42:19 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 23:31:37 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 01:13:11 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int		checkshape(char *square)
 	f[5] = checkT;
 	f[6] = checkZ;
 	i = -1;
-	while (++i < 1)
+	while (++i < 7)
 		if (f[i](tab))
 			return (i);
 	return (-1);

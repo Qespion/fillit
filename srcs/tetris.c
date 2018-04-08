@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 23:22:10 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 23:28:21 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 01:10:37 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int		checkSN(char **tab)
 	int		y;
 
 	y = -1;
-	while (++y < 4)
+	while (++y < 2)
 	{
 		x = -1;
-		while (++x < 4)
+		while (++x < 3)
 		{
 			if (tab[y][x] == '#' && tab[y + 1][x] == '#' &&
 					tab[y + 1][x + 1] == '#' && tab[y + 2][x + 1] == '#')
@@ -59,10 +59,10 @@ int		checkSE(char **tab)
 	int		y;
 
 	y = -1;
-	while (++y < 4)
+	while (++y < 3)
 	{
-		x = -1;
-		while (++x < 4)
+		x = 0;
+		while (++x < 3)
 		{
 			if (tab[y][x] == '#' && tab[y][x + 1] == '#' &&
 					tab[y + 1][x - 1] == '#' && tab[y + 1][x] == '#')

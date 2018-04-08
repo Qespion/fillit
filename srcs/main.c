@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 16:43:56 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 21:48:03 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 01:13:01 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		main(int ac, char **av)
 
 	if (!(shapes = (t_shapes *)malloc(sizeof(*shapes) * 26)))
 		return (EXIT_FAILURE);
-	if (!(square = ft_strnew(20)))
+	if (!(square = ft_strnew(21)))
 		return (EXIT_FAILURE);
 	if (ac != 2)								// error if there's not 2 args
 		ft_strerror(shapes, square, 0, 1);

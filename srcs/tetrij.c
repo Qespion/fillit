@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 22:25:40 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 22:54:09 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 01:03:42 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 **			[X] Check south
 **			[X] Check west
 **
-** FIXME:	[ ] Nothing yet
+** FIXME:	[X] Segv
 */
 
 #include "fillit.h"
@@ -39,9 +39,9 @@ int		checkJN(char **tab)
 	int		y;
 
 	y = -1;
-	while (++y < 4)
+	while (++y < 2)
 	{
-		x = -1;
+		x = 0;
 		while (++x < 4)
 		{
 			if (tab[y][x] == '#' && tab[y + 1][x] == '#' &&
@@ -61,10 +61,10 @@ int		checkJE(char **tab)
 	int		y;
 
 	y = -1;
-	while (++y < 4)
+	while (++y < 3)
 	{
 		x = -1;
-		while (++x < 4)
+		while (++x < 2)
 		{
 			if (tab[y][x] == '#' && tab[y + 1][x] == '#' &&
 					tab[y + 1][x + 1] == '#' && tab[y + 1][x + 2] == '#')
@@ -84,10 +84,10 @@ int		checkJS(char **tab)
 	int		y;
 
 	y = -1;
-	while (++y < 4)
+	while (++y < 2)
 	{
 		x = -1;
-		while (++x < 4)
+		while (++x < 3)
 		{
 			if (tab[y][x] == '#' && tab[y][x + 1] == '#' &&
 					tab[y + 1][x] == '#' && tab[y + 2][x] == '#')
@@ -106,10 +106,10 @@ int		checkJW(char **tab)
 	int		y;
 
 	y = -1;
-	while (++y < 4)
+	while (++y < 3)
 	{
 		x = -1;
-		while (++x < 4)
+		while (++x < 2)
 		{
 			if (tab[y][x] == '#' && tab[y][x + 1] == '#' &&
 					tab[y][x + 2] == '#' && tab[y + 1][x + 2] == '#')
