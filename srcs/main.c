@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 16:43:56 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 14:36:25 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/08 16:07:21 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_strerror(t_shapes *shapes, char *square, int fd, int code)
 	if (code == 1)
 		ft_putendl("usage: ./fillit source_file");
 	else
-		ft_putendl(CT_RED CB_YELLOW "error" C_RESET);
+		ft_putendl("error");
 	free(shapes);
 	free(square);
 	close (fd);
