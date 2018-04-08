@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:42:19 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 12:28:00 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/08 14:06:32 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 /*
 ** TODO:	[ ] Set loop functions pointer in checkshape
-**			[ ] Free all malloc in strerror
+**			[X] Free all malloc in strerror
 **
 ** FUNC:	exit
 **			open / close
@@ -25,37 +25,31 @@
 ** FIXME:	[ ] Nothing yet
 */
 
-int		checkfile(t_shapes **shapes, char *file)
+int		checkfile(t_shapes **shapes, char **square, int fd)
 {
-	char	*square;
 	int		bytes;
-	int		fd;
 	int		i;
 
-	if ((fd = open(file, O_RDONLY)) < 0)
-		ft_strerror(shapes, 2);
-	if (!(square = (char *)malloc(sizeof(*square) * 21)))
-		return (0);
 	i = -1;
-	while ((bytes = read(fd, &square, 20)) > 0)
+	while ((bytes = read(fd, &(*square), 20)) > 0)
 	{
-		if ((shapes[++i]->shape = checkshape(square)) > 0)
+		if ((shapes[++i]->shape = checkshape(*square)) > 0)
 		{
 			shapes[i]->x = 0;
 			shapes[i]->y = 0;
 			shapes[i]->direction = 0;
 		}
 		else
-			ft_strerror(shapes, 2);
-		if ((bytes = read(fd, &square, 1)) > 0)		// pass the empty line
+			ft_strerror(*shapes, *square, fd, 2);
+		if ((bytes = read(fd, &(*square), 1)) > 0)		// pass the empty line
 			;
 	}
-	return (1);
+	return (0);
 }
 
 int		checkshape(char *square)
 {
-	printf("%s\n", square);
+	ft_putendl(square);
 	//if (checkI(square))
 	//	return ('I');
 	/*if (checkJ(square))

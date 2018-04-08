@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 12:27:51 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/08 14:14:08 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct		s_shapes
 	int				shape;		// 'I', 'J', 'L', 'O', 'S', 'T', 'Z'
 	int				x;
 	int				y;
-	char			direction;	// 'N', 'E', 'S', 'W'
+	int				direction;	// 'N', 'E', 'S', 'W'
 }					t_shapes;
 
 // Reset colors
@@ -49,9 +49,9 @@ typedef struct		s_shapes
 # define CB_CYAN		"\033[46m"
 # define CB_WHITE		"\033[47m"
 
-void	ft_strerror(t_shapes **shapes, int code);
+void	ft_strerror(t_shapes *shapes, char *square, int fd, int code);
 
-int		checkfile(t_shapes **shapes, char *file);
+int		checkfile(t_shapes **shapes, char **square, int fd);
 int		checkshape(char *square);
 
 int		checkI(char *square);

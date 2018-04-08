@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 16:43:56 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 12:27:47 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/08 14:36:25 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 **			write / read
 **
 ** BONUS:	[ ] Colors
+**			[ ] No leaks
 **
 ** FIXME:	[ ] Nothing yet
 */
@@ -37,28 +38,36 @@
 #include "fillit.h"
 #include "libft.h"
 
-void	ft_strerror(t_shapes **shapes, int code)
+void	ft_strerror(t_shapes *shapes, char *square, int fd, int code)
 {
 	if (code == 1)
 		ft_putendl("usage: ./fillit source_file");
 	else
 		ft_putendl(CT_RED CB_YELLOW "error" C_RESET);
 	free(shapes);
+	free(square);
+	close (fd);
 	exit(EXIT_FAILURE);
 }
 
 int		main(int ac, char **av)
 {
 	t_shapes		*shapes;
-	int				error;
+	char			*square;
+	int				fd;
 
-	error = 0;
 	if (!(shapes = (t_shapes *)malloc(sizeof(*shapes))))
-		return (1);
-	if (ac != 2)
-		ft_strerror(&shapes, 1);
-	if (!checkfile(&shapes, av[1]))
-		ft_strerror(&shapes, 2);
-	free(shapes);
-	return (0);
+		return (EXIT_FAILURE);
+	if (!(square = (char *)malloc(sizeof(*square) * 21)))
+		return (EXIT_FAILURE);
+	if (ac != 2)								// error if there's not 2 args
+		ft_strerror(shapes, square, 0, 1);
+	if ((fd = open(av[1], O_RDONLY)) < 0)
+		ft_strerror(shapes, square, fd, 2);
+	if (!checkfile(&shapes, &square, fd))		// error if one shape in file is invalid
+		ft_strerror(shapes, square, fd, 2);
+	free(shapes);								// free the struct
+	free(square);
+	close (fd);
+	return (EXIT_SUCCESS);
 }
