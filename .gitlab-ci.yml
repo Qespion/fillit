@@ -1,25 +1,25 @@
-image:	gcc
+image:  gcc
 
 before_script:
-	apt-get update -qq && apt-get install -y -qq gcc
+  apt-get update -qq && apt-get install -y -qq gcc
 
 compile:
-	stage:	build
-	script:	"make re"
+  stage:  build
+  script: "make re"
 
 without_args:
-	stage:	test
-	script:	"sh gitlab-test.sh 1"
+  stage:  test
+  script: "sh gitlab-test.sh 1"
 
 invalid_args:
-	stage:	test
-	script:	"sh gitlab-test.sh 2"
+  stage:  test
+  script: "sh gitlab-test.sh 2"
 
 one_args:
-	stage:	test
-	script:	"sh gitlab-test.sh 3"
-	allow_failure:	true
+  stage:  test
+  script: "sh gitlab-test.sh 3"
+  allow_failure:  true
 
 two_args:
-	stage:	test
-	script:	"sh gitlab-test.sh 4"
+  stage:  test
+  script: "sh gitlab-test.sh 4"
