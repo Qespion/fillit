@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 14:14:08 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/08 18:15:32 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdio.h>		// printf
 
 typedef struct		s_shapes
-{
+{								//  0    1    2    3    4    5    6
 	int				shape;		// 'I', 'J', 'L', 'O', 'S', 'T', 'Z'
 	int				x;
 	int				y;
@@ -49,13 +49,17 @@ typedef struct		s_shapes
 # define CB_CYAN		"\033[46m"
 # define CB_WHITE		"\033[47m"
 
+// Main.c
 void	ft_strerror(t_shapes *shapes, char *square, int fd, int code);
 
+// Check.c
 int		checkfile(t_shapes **shapes, char **square, int fd);
 int		checkshape(char *square);
+int		checkchars(char *square);
 
-int		checkI(char *square);
-int		checkIH(char *square);
-int		checkIV(char *square);
+// Tetrii.c
+int		checkI(char **tab);
+int		checkIH(char **tab);
+int		checkIV(char **tab);
 
 #endif
