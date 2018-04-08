@@ -3,17 +3,17 @@ before_script:
 
 without_args:
   stage:  test
-  script: "sh gitlab-test.sh 1"
+  script: "sh gitlab-tests.sh 1"
 
 invalid_args:
   stage:  test
-  script: "sh gitlab-test.sh 2"
+  script: "sh gitlab-tests.sh 2"
 
 one_args:
   stage:  test
-  script: "sh gitlab-test.sh 3"
+  script: "sh gitlab-tests.sh 3"
   allow_failure:  true
 
 two_args:
   stage:  test
-  script: "sh gitlab-test.sh 4"
+  script: "sh gitlab-tests.sh 4"
