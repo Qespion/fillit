@@ -3,10 +3,6 @@ image:  gcc
 before_script:
   - apt-get update -qq && apt-get install -y -qq gcc
 
-compile:
-  stage:  build
-  script: "make re"
-
 without_args:
   stage:  test
   script: "sh gitlab-test.sh 1"
