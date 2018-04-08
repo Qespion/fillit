@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 16:43:56 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 01:13:01 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 01:51:37 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,19 @@ int		main(int ac, char **av)
 	char			*square;
 	int				fd;
 
-	if (!(shapes = (t_shapes *)malloc(sizeof(*shapes) * 26)))
+	if (!(shapes = (t_shapes *)malloc(sizeof(*shapes) * 27)))
 		return (EXIT_FAILURE);
-	if (!(square = ft_strnew(21)))
+	if (!(square = ft_strnew(20)))
 		return (EXIT_FAILURE);
 	if (ac != 2)								// error if there's not 2 args
 		ft_strerror(shapes, square, 0, 1);
 	if ((fd = open(av[1], O_RDONLY)) < 0)
 		ft_strerror(shapes, square, fd, 2);
-	if (!checkfile(&shapes, &square, fd))		// error if one shape in file is invalid
+	if (!checkfile(shapes, &square, fd))		// error if one shape in file is invalid
 		ft_strerror(shapes, square, fd, 2);
+	//int i = -1;								// roam all structures (test)
+	//while (shapes[++i].shape != -1)
+	//	ft_putnbr(shapes[i].shape);
 	free(shapes);								// free the struct
 	free(square);
 	close (fd);

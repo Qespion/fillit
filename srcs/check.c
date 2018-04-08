@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:42:19 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 01:13:11 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 01:50:58 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,24 @@
 **			[X] Check chars in square (4# 4\n 12.)
 **			[X] Check I shape
 **			[X] Check J shape
-**			[ ] Check L shape
-**			[ ] Check O shape
-**			[ ] Check S shape
-**			[ ] Check T shape
-**			[ ] Check Z shape
+**			[X] Check L shape
+**			[X] Check O shape
+**			[X] Check S shape
+**			[X] Check T shape
+**			[X] Check Z shape
 **
 ** FUNC:	exit
 **			open / close
 **			malloc / free
 **			write / read
 **
-** FIXME:	[ ] Nothing yet
+** FIXME:	[ ] Segv l45 for 3rd struct
 */
 
 #include "fillit.h"
 #include "libft.h"
 
-int		checkfile(t_shapes **shapes, char **square, int fd)
+int		checkfile(t_shapes *shapes, char **square, int fd)
 {
 	int		bytes;
 	char	space;
@@ -42,17 +42,18 @@ int		checkfile(t_shapes **shapes, char **square, int fd)
 	i = -1;
 	while ((bytes = read(fd, *square, 20)) > 0)
 	{
-		if ((shapes[++i]->shape = checkshape(*square)) >= 0)	// if valid, set shape in struct
+		if ((shapes[++i].shape = checkshape(*square)) >= 0)	// if valid, set shape in struct
 		{
-			shapes[i]->x = 0;
-			shapes[i]->y = 0;
-			shapes[i]->direction = 0;
+			shapes[i].x = 0;
+			shapes[i].y = 0;
+			shapes[i].direction = 0;
 		}
 		else													// if not valid, exit
-			ft_strerror(*shapes, *square, fd, 2);
+			ft_strerror(shapes, *square, fd, 2);
 		if ((bytes = read(fd, &space, 1)) > 0)					// pass the empty line
 			;
 	}
+	shapes[++i].shape = -1;										// stop int
 	return (1);
 }
 

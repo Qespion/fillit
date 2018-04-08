@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 23:30:22 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 01:42:52 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct		s_shapes
 void	ft_strerror(t_shapes *shapes, char *square, int fd, int code);
 
 // Check.c
-int		checkfile(t_shapes **shapes, char **square, int fd);
+int		checkfile(t_shapes *shapes, char **square, int fd);
 int		checkshape(char *square);
 int		checkchars(char *square);
 
