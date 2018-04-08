@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 16:43:56 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/07 23:56:19 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/08 12:27:47 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,28 @@
 #include "fillit.h"
 #include "libft.h"
 
-void	ft_strerror(void)
+void	ft_strerror(t_shapes **shapes, int code)
 {
-	ft_putendl(CT_RED CB_YELLOW "error" C_RESET);
+	if (code == 1)
+		ft_putendl("usage: ./fillit source_file");
+	else
+		ft_putendl(CT_RED CB_YELLOW "error" C_RESET);
+	free(shapes);
 	exit(EXIT_FAILURE);
 }
 
 int		main(int ac, char **av)
 {
 	t_shapes		*shapes;
+	int				error;
 
+	error = 0;
 	if (!(shapes = (t_shapes *)malloc(sizeof(*shapes))))
 		return (1);
 	if (ac != 2)
-		ft_strerror();
+		ft_strerror(&shapes, 1);
 	if (!checkfile(&shapes, av[1]))
-		ft_strerror();
+		ft_strerror(&shapes, 2);
 	free(shapes);
-	//while (1)				// Pour tester les leaks
-	//	;					//
-	// https://forum.intra.42.fr/topics/18507/messages?page=1#86363
 	return (0);
 }

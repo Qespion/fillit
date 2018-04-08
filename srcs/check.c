@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:42:19 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/07 22:51:03 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/08 12:28:00 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		checkfile(t_shapes **shapes, char *file)
 	int		i;
 
 	if ((fd = open(file, O_RDONLY)) < 0)
-		ft_strerror();
+		ft_strerror(shapes, 2);
 	if (!(square = (char *)malloc(sizeof(*square) * 21)))
 		return (0);
 	i = -1;
@@ -46,7 +46,7 @@ int		checkfile(t_shapes **shapes, char *file)
 			shapes[i]->direction = 0;
 		}
 		else
-			ft_strerror();
+			ft_strerror(shapes, 2);
 		if ((bytes = read(fd, &square, 1)) > 0)		// pass the empty line
 			;
 	}
