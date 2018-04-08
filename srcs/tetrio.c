@@ -6,14 +6,14 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 23:07:30 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 01:06:20 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 01:14:31 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** TODO:	[X] Check north
 **
-** FIXME:	[ ] Nothing yet
+** FIXME:	[X] Segv
 */
 
 #include "fillit.h"

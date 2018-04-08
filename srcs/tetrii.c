@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 20:10:44 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 00:23:58 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 01:14:19 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 ** TODO:	[X] Check horizontaly
 **			[X] Check verticaly
 **
-** FIXME:	[ ] Nothing yet
+** FIXME:	[X] Segv
 */
 
 #include "fillit.h"
