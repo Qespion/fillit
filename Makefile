@@ -6,7 +6,7 @@
 #    By: groussel <groussel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/07 16:25:30 by groussel          #+#    #+#              #
-#    Updated: 2018/04/08 14:11:24 by groussel         ###   ########.fr        #
+#    Updated: 2018/04/08 21:45:41 by groussel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ OBJS	=	$(addprefix $(OBJ_DIR), $(SRC_BAS:.c=.o))
 all:		$(NAME)
 
 $(NAME):	$(OBJ_DIR) $(OBJS)
-			make -C libft/ fclean
 			make -C libft/
 			gcc $(FLAGS) $(OBJS) -L libft/ -lft -o $(NAME)
 

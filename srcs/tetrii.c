@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 20:10:44 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 18:25:50 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/08 21:41:16 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@
 */
 
 #include "fillit.h"
+#include "libft.h"
 
 int		checkI(char **tab)
 {
-	if (!checkIH(tab) || !checkIV(tab))
+	if (!checkIH(tab) && !checkIV(tab))
 		return (0);
 	return (1);
 }

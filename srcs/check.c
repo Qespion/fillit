@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:42:19 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 18:27:07 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/08 21:46:49 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,11 @@
 int		checkfile(t_shapes **shapes, char **square, int fd)
 {
 	int		bytes;
+	char	space;
 	int		i;
 
 	i = -1;
-	while ((bytes = read(fd, &(*square), 20)) > 0)
+	while ((bytes = read(fd, *square, 20)) > 0)
 	{
 		if ((shapes[++i]->shape = checkshape(*square)) >= 0)	// if valid, set shape in struct
 		{
@@ -49,10 +50,10 @@ int		checkfile(t_shapes **shapes, char **square, int fd)
 		}
 		else													// if not valid, exit
 			ft_strerror(*shapes, *square, fd, 2);
-		if ((bytes = read(fd, &(*square), 1)) > 0)				// pass the empty line
+		if ((bytes = read(fd, &space, 1)) > 0)					// pass the empty line
 			;
 	}
-	return (0);
+	return (1);
 }
 
 int		checkshape(char *square)
@@ -71,12 +72,12 @@ int		checkshape(char *square)
 	//f[4] = checkS;
 	//f[5] = checkT;
 	//f[6] = checkZ;
+	ft_putendl(tab[0]);
 	ft_putendl(tab[1]);
 	ft_putendl(tab[2]);
 	ft_putendl(tab[3]);
-	ft_putendl(tab[4]);
 	i = -1;
-	while (f[++i])
+	while (++i < 1)
 		if (f[i](tab))
 			return (i);
 	return (-1);
