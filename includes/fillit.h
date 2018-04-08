@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/08 23:21:12 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/08 23:30:22 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,13 @@ int		checkTS(char **tab);
 int		checkTW(char **tab);
 
 // Tetris.c
+int		checkS(char **tab);
+int		checkSN(char **tab);
+int		checkSE(char **tab);
 
 // Tetriz.c
+int		checkZ(char **tab);
+int		checkZN(char **tab);
+int		checkZE(char **tab);
 
 #endif
