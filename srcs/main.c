@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 16:43:56 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 01:51:37 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 02:01:32 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_strerror(t_shapes *shapes, char *square, int fd, int code)
 		ft_putendl(CT_RED CB_YELLOW "error" C_RESET);
 	free(shapes);
 	free(square);
-	close (fd);
+	close(fd);
 	exit(EXIT_FAILURE);
 }
 
@@ -64,6 +64,6 @@ int		main(int ac, char **av)
 	//	ft_putnbr(shapes[i].shape);
 	free(shapes);								// free the struct
 	free(square);
-	close (fd);
+	close(fd);
 	return (EXIT_SUCCESS);
 }

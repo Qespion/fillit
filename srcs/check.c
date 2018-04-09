@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:42:19 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 01:50:58 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 02:01:44 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 **			malloc / free
 **			write / read
 **
-** FIXME:	[ ] Segv l45 for 3rd struct
+** FIXME:	[X] Segv l45 for 3rd struct
 */
 
 #include "fillit.h"
@@ -42,7 +42,7 @@ int		checkfile(t_shapes *shapes, char **square, int fd)
 	i = -1;
 	while ((bytes = read(fd, *square, 20)) > 0)
 	{
-		if ((shapes[++i].shape = checkshape(*square)) >= 0)	// if valid, set shape in struct
+		if ((shapes[++i].shape = checkshape(*square)) >= 0)		// if valid, set shape in struct
 		{
 			shapes[i].x = 0;
 			shapes[i].y = 0;
