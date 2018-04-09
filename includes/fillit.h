@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 01:42:52 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 08:39:11 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct		s_shapes
 	int				x;
 	int				y;
 	int				direction;	// 'N', 'E', 'S', 'W'
+	int				set;		// 1 or 0
+	int				letter;
 }					t_shapes;
 
 // Reset colors
@@ -51,11 +53,15 @@ typedef struct		s_shapes
 
 // Main.c
 void	ft_strerror(t_shapes *shapes, char *square, int fd, int code);
+int		setmap(char ***map);
 
 // Check.c
 int		checkfile(t_shapes *shapes, char **square, int fd);
 int		checkshape(char *square);
 int		checkchars(char *square);
+
+// Find.c
+int		start(t_shapes *shapes);
 
 // Tetrii.c
 int		checkI(char **tab);

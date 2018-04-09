@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:42:19 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 02:01:44 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 08:09:28 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 **			[X] Check S shape
 **			[X] Check T shape
 **			[X] Check Z shape
+**			[X] Set letter
 **
 ** FUNC:	exit
 **			open / close
@@ -47,6 +48,8 @@ int		checkfile(t_shapes *shapes, char **square, int fd)
 			shapes[i].x = 0;
 			shapes[i].y = 0;
 			shapes[i].direction = 0;
+			shapes[i].set = 0;
+			shapes[i].letter = 'A' + i;
 		}
 		else													// if not valid, exit
 			ft_strerror(shapes, *square, fd, 2);

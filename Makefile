@@ -6,14 +6,13 @@
 #    By: groussel <groussel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/07 16:25:30 by groussel          #+#    #+#              #
-#    Updated: 2018/04/08 23:30:48 by groussel         ###   ########.fr        #
+#    Updated: 2018/04/09 03:52:14 by groussel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	fillit
 
 FLAGS	=	-Wall -Wextra -Werror
-FLAGSD	=	-Wall -Wextra -Werror -g
 
 SRC_DIR	=	srcs/
 OBJ_DIR =	objs/
@@ -22,6 +21,7 @@ LIB_DIR	=	libft/
 
 SRC_BAS	=	main.c		\
 			check.c		\
+			find.c		\
 			tetrii.c	\
 			tetrij.c	\
 			tetril.c	\

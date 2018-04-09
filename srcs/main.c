@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 16:43:56 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 02:01:32 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/09 06:45:07 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int		main(int ac, char **av)
 	//int i = -1;								// roam all structures (test)
 	//while (shapes[++i].shape != -1)
 	//	ft_putnbr(shapes[i].shape);
+	start(shapes);
 	free(shapes);								// free the struct
 	free(square);
 	close(fd);
