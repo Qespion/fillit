@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 23:12:22 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 01:14:42 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/10 13:02:10 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,15 @@
 
 int		checkT(char **tab)
 {
-	if (!checkTN(tab) && !checkTE(tab) && !checkTS(tab) && !checkTW(tab))
-		return (0);
-	return (1);
+	if (checkTN(tab))
+		return (1);
+	if (checkTE(tab))
+		return (2);
+	if (checkTS(tab))
+		return (3);
+	if (checkTW(tab))
+		return (4);
+	return (0);
 }
 
 //  #

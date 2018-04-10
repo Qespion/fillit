@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 08:39:11 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/10 13:13:37 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ int		start(t_shapes *shapes);
 
 // Tetrii.c
 int		checkI(char **tab);
-int		checkIH(char **tab);
-int		checkIV(char **tab);
+int		checkIN(char **tab);
+int		checkIE(char **tab);
 
 // Tetrij.c
 int		checkJ(char **tab);

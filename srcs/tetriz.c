@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 23:26:44 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 01:14:46 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/10 13:02:22 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@
 
 int		checkZ(char **tab)
 {
-	if (!checkZN(tab) && !checkZE(tab))
-		return (0);
-	return (1);
+	if (checkZN(tab))
+		return (1);
+	if (checkZE(tab))
+		return (2);
+	return (0);
 }
 
 //  #

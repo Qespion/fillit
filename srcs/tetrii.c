@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 20:10:44 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 01:14:19 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/10 12:59:32 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,16 @@
 
 int		checkI(char **tab)
 {
-	if (!checkIH(tab) && !checkIV(tab))
-		return (0);
-	return (1);
+	if (checkIN(tab))
+		return (1);
+	if (checkIE(tab))
+		return (2);
+	return (0);
 }
 
 // ####
 
-int		checkIH(char **tab)
+int		checkIN(char **tab)
 {
 	int		y;
 
@@ -48,7 +50,7 @@ int		checkIH(char **tab)
 // #
 // #
 
-int		checkIV(char **tab)
+int		checkIE(char **tab)
 {
 	int		x;
 

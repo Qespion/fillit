@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 23:07:30 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 01:32:22 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/10 13:01:30 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 
 int		checkO(char **tab)
 {
-	if (!checkON(tab))
-		return (0);
-	return (1);
+	if (checkON(tab))
+		return (1);
+	return (0);
 }
 
 // ##
