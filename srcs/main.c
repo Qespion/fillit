@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 16:43:56 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 06:45:07 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/10 15:10:38 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,41 @@ void	ft_strerror(t_shapes *shapes, char *square, int fd, int code)
 	if (code == 1)
 		ft_putendl("usage: ./fillit source_file");
 	else
-		ft_putendl(CT_RED CB_YELLOW "error" C_RESET);
+		ft_putendl(CT_GREEN CB_GREEN "error" C_RESET);
 	free(shapes);
 	free(square);
 	close(fd);
 	exit(EXIT_FAILURE);
+}
+
+void	printcolor(void)
+{
+		ft_putendl(CT_MAROON CB_MAROON "TOTOR" C_RESET);
+		ft_putendl(CT_GREEN CB_GREEN "TOTOR" C_RESET);
+		ft_putendl(CT_OLIVE CB_OLIVE "TOTOR" C_RESET);
+		ft_putendl(CT_NAVY CB_NAVY "TOTOR" C_RESET);
+		ft_putendl(CT_PURPLE CB_PURPLE "TOTOR" C_RESET);
+		ft_putendl(CT_SILVER CB_SILVER "TOTOR" C_RESET);
+		ft_putendl(CT_RED CB_RED "TOTOR" C_RESET);
+		ft_putendl(CT_YELLOW CB_YELLOW "TOTOR" C_RESET);
+		ft_putendl(CT_FUCHSIA CB_FUCHSIA "TOTOR" C_RESET);
+		ft_putendl(CT_AQUA CB_AQUA "TOTOR" C_RESET);
+		ft_putendl(CT_WHITE CB_WHITE "TOTOR" C_RESET);
+		ft_putendl(CT_DARKBLUE CB_DARKBLUE "TOTOR" C_RESET);
+		ft_putendl(CT_DSKYBLUE4 CB_DSKYBLUE4 "TOTOR" C_RESET);
+		ft_putendl(CT_SPRINGREEN4 CB_SPRINGREEN4 "TOTOR" C_RESET);
+		ft_putendl(CT_CYAN1 CB_CYAN1 "TOTOR" C_RESET);
+		ft_putendl(CT_PURPLE4 CB_PURPLE4 "TOTOR" C_RESET);
+		ft_putendl(CT_MTURQUOISE CB_MTURQUOISE "TOTOR" C_RESET);
+		ft_putendl(CT_LIGHTPINK4 CB_LIGHTPINK4 "TOTOR" C_RESET);
+		ft_putendl(CT_SLATEBLUE1 CB_SLATEBLUE1 "TOTOR" C_RESET);
+		ft_putendl(CT_DEEPPINK4 CB_DEEPPINK4 "TOTOR" C_RESET);
+		ft_putendl(CT_LSTEELBLUE CB_LSTEELBLUE "TOTOR" C_RESET);
+		ft_putendl(CT_DARKORANGE3 CB_DARKORANGE3 "TOTOR" C_RESET);
+		ft_putendl(CT_SALMON1 CB_SALMON1 "TOTOR" C_RESET);
+		ft_putendl(CT_ORANGE1 CB_ORANGE1 "TOTOR" C_RESET);
+		ft_putendl(CT_BLACK CB_BLACK "TOTOR" C_RESET);
+		ft_putendl(CT_THISTLE1 CB_THISTLE1 "TOTOR" C_RESET);
 }
 
 int		main(int ac, char **av)
@@ -62,7 +92,8 @@ int		main(int ac, char **av)
 	//int i = -1;								// roam all structures (test)
 	//while (shapes[++i].shape != -1)
 	//	ft_putnbr(shapes[i].shape);
-	start(shapes);
+	//start(shapes);
+	printcolor();
 	free(shapes);								// free the struct
 	free(square);
 	close(fd);

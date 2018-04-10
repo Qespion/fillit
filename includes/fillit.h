@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/10 13:13:37 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/10 15:09:07 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,60 @@ typedef struct		s_shapes
 # define C_RESET         "\033[0m"
 
 // Colors
-# define CT_BLACK		"\033[30m"
-# define CT_RED			"\033[31m"
-# define CT_GREEN		"\033[32m"
-# define CT_YELLOW		"\033[33m"
-# define CT_BLUE		"\033[34m"
-# define CT_MAGENTA		"\033[35m"
-# define CT_CYAN		"\033[36m"
-# define CT_WHITE		"\033[37m"
+# define CT_MAROON		"\033[38;5;1m"
+# define CT_GREEN		"\033[38;5;2m"
+# define CT_OLIVE		"\033[38;5;3m"
+# define CT_NAVY		"\033[38;5;4m"
+# define CT_PURPLE		"\033[38;5;5m"
+# define CT_SILVER		"\033[38;5;7m"
+# define CT_RED			"\033[38;5;9m"
+# define CT_YELLOW		"\033[38;5;11m"
+# define CT_FUCHSIA		"\033[38;5;13m"
+# define CT_AQUA		"\033[38;5;14m"
+# define CT_WHITE		"\033[38;5;15m"
+# define CT_DARKBLUE	"\033[38;5;18m"
+# define CT_DSKYBLUE4	"\033[38;5;25m"
+# define CT_SPRINGREEN4	"\033[38;5;29m"
+# define CT_CYAN1		"\033[38;5;51m"
+# define CT_PURPLE4		"\033[38;5;54m"
+# define CT_MTURQUOISE	"\033[38;5;80m"
+# define CT_LIGHTPINK4	"\033[38;5;95m"
+# define CT_SLATEBLUE1	"\033[38;5;99m"
+# define CT_DEEPPINK4	"\033[38;5;125m"
+# define CT_LSTEELBLUE	"\033[38;5;147m"
+# define CT_DARKORANGE3	"\033[38;5;166m"
+# define CT_SALMON1		"\033[38;5;209m"
+# define CT_ORANGE1		"\033[38;5;214m"
+# define CT_BLACK		"\033[38;5;232m"
+# define CT_THISTLE1	"\033[38;5;225m"
 
 // Backgrounds colors
-# define CB_BLACK		"\033[40m"
-# define CB_RED			"\033[41m"
-# define CB_GREEN		"\033[42m"
-# define CB_YELLOW		"\033[43m"
-# define CB_BLUE		"\033[44m"
-# define CB_MAGENTA		"\033[45m"
-# define CB_CYAN		"\033[46m"
-# define CB_WHITE		"\033[47m"
+# define CB_MAROON		"\033[48;5;1m"
+# define CB_GREEN		"\033[48;5;2m"
+# define CB_OLIVE		"\033[48;5;3m"
+# define CB_NAVY		"\033[48;5;4m"
+# define CB_PURPLE		"\033[48;5;5m"
+# define CB_SILVER		"\033[48;5;7m"
+# define CB_RED			"\033[48;5;9m"
+# define CB_YELLOW		"\033[48;5;11m"
+# define CB_FUCHSIA		"\033[48;5;13m"
+# define CB_AQUA		"\033[48;5;14m"
+# define CB_WHITE		"\033[48;5;15m"
+# define CB_DARKBLUE	"\033[48;5;18m"
+# define CB_DSKYBLUE4	"\033[48;5;25m"
+# define CB_SPRINGREEN4	"\033[48;5;29m"
+# define CB_CYAN1		"\033[48;5;51m"
+# define CB_PURPLE4		"\033[48;5;54m"
+# define CB_MTURQUOISE	"\033[48;5;80m"
+# define CB_LIGHTPINK4	"\033[48;5;95m"
+# define CB_SLATEBLUE1	"\033[48;5;99m"
+# define CB_DEEPPINK4	"\033[48;5;125m"
+# define CB_LSTEELBLUE	"\033[48;5;147m"
+# define CB_DARKORANGE3	"\033[48;5;166m"
+# define CB_SALMON1		"\033[48;5;209m"
+# define CB_ORANGE1		"\033[48;5;214m"
+# define CB_BLACK		"\033[48;5;232m"
+# define CB_THISTLE1	"\033[48;5;225m"
 
 // Main.c
 void	ft_strerror(t_shapes *shapes, char *square, int fd, int code);
