@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/12 15:06:32 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/12 15:33:22 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/12 17:47:22 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int ft_putzH(int x, int y, char **map)
 	return (0);
 }
 
-int	ft_putz(int x, int y, char **map, t_shapes *shapes, int p_nbr)
+int	ft_putZ(int x, int y, char **map, t_shapes *shapes, int p_nbr)
 {
 	int	is_valid;
 

@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/12 17:10:01 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/12 17:43:56 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,21 @@
 #include "fillit.h"
 #include "libft.h"
 
-char	**ft_playground(void)
+char	**ft_playground(int p_nbr)
 {
-	char	**tab;
+	int		base;
 	int		i;
 	int		r;
+	char	**tab;
 
+	base = ft_power(4, p_nbr) / 2;
 	r = 0;
 	i = 0;
-	if (!(tab = (char**)malloc(sizeof(**tab) * 15)))
+	if (!(tab = (char**)malloc(sizeof(**tab) * base)))
 		return (NULL);
 	while (i < 15)
 	{
-		if (!(tab[i] = (char*)malloc(sizeof(*tab) * 15)))
+		if (!(tab[i] = (char*)malloc(sizeof(*tab) * base)))
 			return (NULL);
 		while (tab[i])
 		{
@@ -52,7 +54,7 @@ char	**ft_playground(void)
 		}
 		r = 0;
 	}
-	return (tab);
+	return(tab);
 }
 
 int	ft_is_valid(char *map, int x, int y)
@@ -74,6 +76,18 @@ void	ft_trypiece(t_shapes *shapes, char **map, int p_nbr)
 	y = 0;
 	if (shapes[p_nbr].shape == 0)
 		ft_putI(int x, int y, char **map, p_nbr);
+	if (shapes[p_nbr].shape == 1)
+		ft_putJ(int x, int y, char **map, p_nbr);
+	if (shapes[p_nbr].shape == 2)
+		ft_putL(int x, int y, char **map, p_nbr);
+	if (shapes[p_nbr].shape == 3)
+		ft_putO(int x, int y, char **map, p_nbr);
+	if (shapes[p_nbr].shape == 4)
+		ft_putS(int x, int y, char **map, p_nbr);
+	if (shapes[p_nbr].shape == 5)
+		ft_putT(int x, int y, char **map, p_nbr);
+	if (shapes[p_nbr].shape == 6)
+		ft_putZ(int x, int y, char **map, p_nbr);
 }
 
 int		start(t_shapes *shapes)
@@ -84,7 +98,7 @@ int		start(t_shapes *shapes)
 	p_nbr = 0;
 	while (shapes[p_nbr].shape)
 		++p_nbr;
-	map = ft_playground();
+	map = ft_playground(p_nbr);
 	ft_trypiece(shapes, map, p_nbr);
 	//printf("%d\n", shapes[0].shape);
 	return (0);

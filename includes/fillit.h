@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/12 17:16:59 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/12 17:46:58 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,9 +164,9 @@ int		checkZE(char **tab);
 ** Test on tab
 */
 
-int	ft_putt(int x, int y, char **map, t_shapes *shapes, int p_nbr);
-int	ft_puts(int x, int y, char **map, t_shapes *shapes, int p_nbr);
-int	ft_putz(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putT(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putS(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putZ(int x, int y, char **map, t_shapes *shapes, int p_nbr);
 int	ft_putO(int x, int y, char **map, t_shapes *shapes);
 int	ft_putL(int x, int y, char **map, t_shapes *shapes, int p_nbr);
 int	ft_putJ(int x, int y, char **map, t_shapes *shapes, int p_nbr);
