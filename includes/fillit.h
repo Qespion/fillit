@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/12 16:35:48 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/12 17:16:59 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,14 @@ typedef struct		s_shapes
 	int				letter;
 }					t_shapes;
 
-// Reset colors
+/*
+** Reset colors
+*/
 # define C_RESET         "\033[0m"
 
-// Colors
+/*
+** Colors
+*/
 # define CT_MAROON		"\033[38;5;1m"
 # define CT_GREEN		"\033[38;5;2m"
 # define CT_OLIVE		"\033[38;5;3m"
@@ -59,7 +63,9 @@ typedef struct		s_shapes
 # define CT_BLACK		"\033[38;5;232m"
 # define CT_THISTLE1	"\033[38;5;225m"
 
-// Backgrounds colors
+/*
+** Backgrounds colors
+*/
 # define CB_MAROON		"\033[48;5;1m"
 # define CB_GREEN		"\033[48;5;2m"
 # define CB_OLIVE		"\033[48;5;3m"
@@ -87,54 +93,69 @@ typedef struct		s_shapes
 # define CB_BLACK		"\033[48;5;232m"
 # define CB_THISTLE1	"\033[48;5;225m"
 
-// Main.c
+/*
+** Main.c
+*/
 void	ft_strerror(t_shapes *shapes, char *square, int fd, int code);
 int		setmap(char ***map);
 
-// Check.c
+/*
+** Check.c
+*/
 int		checkfile(t_shapes *shapes, char **square, int fd);
 int		checkshape(char *square);
 int		checkchars(char *square);
 
-// Find.c
+/*
+** Find.c
+*/
 int		start(t_shapes *shapes);
 
-// Tetrii.c
+/*
+** Tetrii.c
+*/
 int		checkI(char **tab);
 int		checkIN(char **tab);
 int		checkIE(char **tab);
-
-// Tetrij.c
+/*
+** Tetrij.c
+*/
 int		checkJ(char **tab);
 int		checkJN(char **tab);
 int		checkJE(char **tab);
 int		checkJS(char **tab);
 int		checkJW(char **tab);
-
-// Tetril.c
+/*
+** Tetril.c
+*/
 int		checkL(char **tab);
 int		checkLN(char **tab);
 int		checkLE(char **tab);
 int		checkLS(char **tab);
 int		checkLW(char **tab);
-
-// Tetrio.c
+/*
+** Tetrio.c
+*/
 int		checkO(char **tab);
 int		checkON(char **tab);
-
-// Tetrit.c
+/*
+** Tetrit.c
+*/
 int		checkT(char **tab);
 int		checkTN(char **tab);
 int		checkTE(char **tab);
 int		checkTS(char **tab);
 int		checkTW(char **tab);
-
-// Tetris.c
+/*
+** Tetris.c
+*/
 int		checkS(char **tab);
 int		checkSN(char **tab);
 int		checkSE(char **tab);
 
-// Tetriz.c
+/*
+** Tetriz.c
+*/
 int		checkZ(char **tab);
 int		checkZN(char **tab);
 int		checkZE(char **tab);

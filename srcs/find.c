@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/10 18:30:25 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/12 17:10:01 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,13 @@ void	ft_trypiece(t_shapes *shapes, char **map, int p_nbr)
 int		start(t_shapes *shapes)
 {
 	char	**map;
+	int		p_nbr;
 
+	p_nbr = 0;
+	while (shapes[p_nbr].shape)
+		++p_nbr;
 	map = ft_playground();
-	ft_trypiece(shapes, map);
-	printf("%d\n", shapes[0].shape);
+	ft_trypiece(shapes, map, p_nbr);
+	//printf("%d\n", shapes[0].shape);
 	return (0);
 }
