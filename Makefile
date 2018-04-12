@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: groussel <groussel@student.42.fr>          +#+  +:+       +#+         #
+#    By: oespion <oespion@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/07 16:25:30 by groussel          #+#    #+#              #
-#    Updated: 2018/04/09 03:52:14 by groussel         ###   ########.fr        #
+#    Updated: 2018/04/12 16:46:32 by oespion          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,14 @@ SRC_BAS	=	main.c		\
 			tetrio.c	\
 			tetrit.c	\
 			tetris.c	\
-			tetriz.c
+			tetriz.c	\
+			ft_puti.c	\
+			ft_putj.c	\
+			ft_puti.c	\
+			ft_puto.c	\
+			ft_puts.c	\
+			ft_putt.c	\
+			ft_putz.c
 
 SRCS	=	$(addprefix $(SRC_DIR), $(SRC_BAS))
 OBJS	=	$(addprefix $(OBJ_DIR), $(SRC_BAS:.c=.o))

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/09 09:18:59 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/10 18:30:25 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,58 @@
 #include "fillit.h"
 #include "libft.h"
 
+char	**ft_playground(void)
+{
+	char	**tab;
+	int		i;
+	int		r;
+
+	r = 0;
+	i = 0;
+	if (!(tab = (char**)malloc(sizeof(**tab) * 15)))
+		return (NULL);
+	while (i < 15)
+	{
+		if (!(tab[i] = (char*)malloc(sizeof(*tab) * 15)))
+			return (NULL);
+		while (tab[i])
+		{
+			tab[i][r] = '.';
+			r++;
+			i++;
+		}
+		r = 0;
+	}
+	return (tab);
+}
+
+int	ft_is_valid(char *map, int x, int y)
+{
+	if (map[x][y] == NULL)
+	{
+		if (x >= 0 && y >= 0)
+			return (1);
+	}
+	return (0);
+}
+
+void	ft_trypiece(t_shapes *shapes, char **map, int p_nbr)
+{
+	int	x;
+	int	y;
+
+	x = 0;
+	y = 0;
+	if (shapes[p_nbr].shape == 0)
+		ft_putI(int x, int y, char **map, p_nbr);
+}
+
 int		start(t_shapes *shapes)
 {
+	char	**map;
 
+	map = ft_playground();
+	ft_trypiece(shapes, map);
+	printf("%d\n", shapes[0].shape);
+	return (0);
 }

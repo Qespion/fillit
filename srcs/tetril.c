@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tetril.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 22:56:53 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/10 13:01:19 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/12 15:35:27 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ int		checkL(char **tab)
 	return (0);
 }
 
-// #
-// #
-// ##
-
+/* #
+** #
+** ##
+*/
 int		checkLN(char **tab)
 {
 	int		x;
@@ -58,9 +58,9 @@ int		checkLN(char **tab)
 	return (0);
 }
 
-// ###
-// #
-
+/* ###
+** #
+*/
 int		checkLE(char **tab)
 {
 	int		x;
@@ -80,10 +80,10 @@ int		checkLE(char **tab)
 	return (0);
 }
 
-// ##
-// 	#
-// 	#
-
+/* ##
+**  #
+** 	#
+*/
 int		checkLS(char **tab)
 {
 	int		x;
@@ -103,9 +103,9 @@ int		checkLS(char **tab)
 	return (0);
 }
 
-//   #
-// ###
-
+/*   #
+** ###
+*/
 int		checkLW(char **tab)
 {
 	int		x;

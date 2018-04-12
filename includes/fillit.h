@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/10 15:09:07 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/12 16:35:48 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,5 +138,17 @@ int		checkSE(char **tab);
 int		checkZ(char **tab);
 int		checkZN(char **tab);
 int		checkZE(char **tab);
+
+/*
+** Test on tab
+*/
+
+int	ft_putt(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+int	ft_puts(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putz(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putO(int x, int y, char **map, t_shapes *shapes);
+int	ft_putL(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putJ(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putI(int x, int y, char **map, t_shapes *shapes, int p_nbr);
 
 #endif
