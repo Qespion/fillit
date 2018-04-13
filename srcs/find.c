@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/13 15:11:28 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/13 17:41:53 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,6 @@ int		start(t_shapes *shapes)
 		r++;
 		i = 0;
 	}
-	ft_trypiece(shapes, map, p_nbr);
+	ft_trypiece(shapes, map, p_nbr, 1, 1);
 	return (0);
 }

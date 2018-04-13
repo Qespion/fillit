@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/13 13:57:21 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/13 17:37:39 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,5 +173,17 @@ int	ft_putJ(int x, int y, char **map, t_shapes *shapes, int p_nbr);
 int	ft_putI(int x, int y, char **map, t_shapes *shapes, int p_nbr);
 int	ft_is_valid(char **map, int x, int y);
 int	ft_sqrt(int nb);
+
+/*
+** Write functions
+*/
+
+void	ft_wrtI(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
+void	ft_wrtS(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
+void	ft_wrtT(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
+void	ft_wrtZ(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
+void	ft_wrtO(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
+void	ft_wrtL(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
+void	ft_wrtJ(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
 
 #endif

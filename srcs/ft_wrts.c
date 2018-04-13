@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 15:32:34 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/13 15:54:33 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/13 17:43:13 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_wrtSV(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 {
-	if (we = 1)
+	if (we == 1)
 	{
 		map[x][y] = shapes[p_nbr].letter;
 		map[x][y + 1] = shapes[p_nbr].letter;
@@ -33,7 +33,7 @@ void	ft_wrtSV(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 
 void	ft_wrtSH(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 {
-	if (we = 1)
+	if (we == 1)
 	{
 		map[x][y] = shapes[p_nbr].letter;
 		map[x + 1][y] = shapes[p_nbr].letter;

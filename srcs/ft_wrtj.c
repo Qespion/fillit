@@ -6,16 +6,16 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 16:39:17 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/13 16:47:03 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/13 17:49:04 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-void	ft_wrtJN(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
+void	ft_wrtjn(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 {
-	if (we = 1)
+	if (we == 1)
 	{
 		map[x][y] = shapes[p_nbr].letter;
 		map[x][y + 1] = shapes[p_nbr].letter;
@@ -31,9 +31,9 @@ void	ft_wrtJN(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 	}
 }
 
-void	ft_wrtJS(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
+void	ft_wrtjs(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 {
-	if (we = 1)
+	if (we == 1)
 	{
 		map[x][y] = shapes[p_nbr].letter;
 		map[x][y + 1] = shapes[p_nbr].letter;
@@ -49,9 +49,9 @@ void	ft_wrtJS(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 	}
 }
 
-void	ft_wrtJE(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
+void	ft_wrtje(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 {
-	if (we = 1)
+	if (we == 1)
 	{
 		map[x][y] = shapes[p_nbr].letter;
 		map[x][y + 1] = shapes[p_nbr].letter;
@@ -67,9 +67,9 @@ void	ft_wrtJE(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 	}
 }
 
-void	ft_wrtJW(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
+void	ft_wrtjw(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 {
-	if (we = 1)
+	if (we == 1)
 	{
 		map[x][y] = shapes[p_nbr].letter;
 		map[x + 1][y] = shapes[p_nbr].letter;
@@ -85,14 +85,14 @@ void	ft_wrtJW(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 	}
 }
 
-int	ft_wrtJ(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
+void	ft_wrtJ(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 {
 	if (shapes[p_nbr].direction == 0)
-		ft_putJN(x, y, map, we);
+		ft_wrtjn(x, y, map, shapes, p_nbr, we);
 	if (shapes[p_nbr].direction == 1)
-		ft_putJE(x, y, map, we);
+		ft_wrtje(x, y, map, shapes, p_nbr, we);
 	if (shapes[p_nbr].direction == 2)
-		ft_putJS(x, y, map, we);
+		ft_wrtjs(x, y, map, shapes, p_nbr, we);
 	if (shapes[p_nbr].direction == 3)
-		ft_putJW(x, y, map, we);
+		ft_wrtjw(x, y, map, shapes, p_nbr, we);
 }
