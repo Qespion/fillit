@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puto.c                                          :+:      :+:    :+:   */
+/*   ft_wrto.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/12 10:02:03 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/13 10:19:14 by oespion          ###   ########.fr       */
+/*   Created: 2018/04/13 16:47:36 by oespion           #+#    #+#             */
+/*   Updated: 2018/04/13 16:48:45 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include "libft.h"
 
-int	ft_putO(int x, int y, char **map)
+void	ft_wrtO(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 {
-	int	is_valid;
-
-	is_valid = ft_is_valid(map, x, y);
-	if (is_valid == 1)
-		is_valid = ft_is_valid(map , x + 1, y);
-	if (is_valid == 1)
-		is_valid = ft_is_valid(map , x, y + 1);
-	if (is_valid == 1)
-		is_valid = ft_is_valid(map , x + 1, y + 1);
-	if (is_valid == 1)
-		return (1);
-	return (0);
+	if (we = 1)
+	{
+		map[x][y] = shapes[p_nbr].letter;
+		map[x][y + 1] = shapes[p_nbr].letter;
+		map[x + 1][y] = shapes[p_nbr].letter;
+		map[x + 1][y + 1] = shapes[p_nbr].letter;
+	}
+	else
+	{
+		map[x][y] = '.';
+		map[x][y + 1] = '.';
+		map[x + 1][y] = '.';
+		map[x + 1][y + 1] = '.';
+	}
 }

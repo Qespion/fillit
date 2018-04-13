@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puto.c                                          :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/12 10:02:03 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/13 10:19:14 by oespion          ###   ########.fr       */
+/*   Created: 2018/04/13 13:51:31 by oespion           #+#    #+#             */
+/*   Updated: 2018/04/13 13:56:35 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int	ft_putO(int x, int y, char **map)
+int	ft_sqrt(int nb)
 {
-	int	is_valid;
+	int	r;
 
-	is_valid = ft_is_valid(map, x, y);
-	if (is_valid == 1)
-		is_valid = ft_is_valid(map , x + 1, y);
-	if (is_valid == 1)
-		is_valid = ft_is_valid(map , x, y + 1);
-	if (is_valid == 1)
-		is_valid = ft_is_valid(map , x + 1, y + 1);
-	if (is_valid == 1)
-		return (1);
+	r = 2;
+	while (r <= nb / 2)
+	{
+		if (r * r == nb)
+			return (r);
+		r++;
+	}
 	return (0);
 }

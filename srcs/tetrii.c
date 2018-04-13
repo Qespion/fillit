@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tetrii.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 20:10:44 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/10 12:59:32 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/13 13:20:50 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int		checkI(char **tab)
 	return (0);
 }
 
-// ####
-
+/* ####
+*/
 int		checkIN(char **tab)
 {
 	int		y;
@@ -45,11 +45,11 @@ int		checkIN(char **tab)
 	return (0);
 }
 
-// #
-// #
-// #
-// #
-
+/* #
+** #
+** #
+** #
+*/
 int		checkIE(char **tab)
 {
 	int		x;

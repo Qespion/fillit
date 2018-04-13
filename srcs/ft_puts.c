@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/12 14:43:38 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/12 15:05:58 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/13 15:35:46 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@ int	ft_putsV(int x, int y, char **map)
 	i = 0;
 	is_valid = ft_is_valid(map, x, y);
 	if (is_valid == 1)
-		is_valid = ft_is_valid(map, x + 1, y);
+		is_valid = ft_is_valid(map, x, y + 1);
 	if (is_valid == 1)
 		is_valid = ft_is_valid(map, x + 1, y + 1);
 	if (is_valid == 1)
-		is_valid = ft_is_valid(map, x + 2, y + 1);
+		is_valid = ft_is_valid(map, x + 1, y + 2);
+	if (is_valid == 1)
+		return (1);
+	return (0);
 }
 
 /*  ##
@@ -43,7 +46,7 @@ int	ft_putsH(int x, int y, char **map)
 	i = 0;
 	is_valid = ft_is_valid(map, x, y);
 	if (is_valid == 1)
-		is_valid = ft_is_valid(map, x, y + 1);
+		is_valid = ft_is_valid(map, x + 1, y);
 	if (is_valid == 1)
 		is_valid = ft_is_valid(map, x, y + 1);
 	if (is_valid == 1)
@@ -53,7 +56,7 @@ int	ft_putsH(int x, int y, char **map)
 	return (0);
 }
 
-int	ft_puts(int x, int y, char **map, t_shapes *shapes, int p_nbr)
+int	ft_putS(int x, int y, char **map, t_shapes *shapes, int p_nbr)
 {
 	int	is_valid;
 

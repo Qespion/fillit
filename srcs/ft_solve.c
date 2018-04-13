@@ -1,29 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puto.c                                          :+:      :+:    :+:   */
+/*   ft_solve.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/12 10:02:03 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/13 10:19:14 by oespion          ###   ########.fr       */
+/*   Created: 2018/04/13 14:21:54 by oespion           #+#    #+#             */
+/*   Updated: 2018/04/13 15:22:09 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "header.h"
+#include "libft.h"
 
-int	ft_putO(int x, int y, char **map)
+int		ft_try_piece
+
+char	**ft_solve(char **map, t_shapes *shapes, int p_nbr)
 {
-	int	is_valid;
+	int	x;
+	int	y;
+	int	valid;
 
-	is_valid = ft_is_valid(map, x, y);
-	if (is_valid == 1)
-		is_valid = ft_is_valid(map , x + 1, y);
-	if (is_valid == 1)
-		is_valid = ft_is_valid(map , x, y + 1);
-	if (is_valid == 1)
-		is_valid = ft_is_valid(map , x + 1, y + 1);
-	if (is_valid == 1)
-		return (1);
-	return (0);
+	valid = 0;
+	x = 0;
+	y = 0;
+	while (shapes[p_nbr].letter)
+	{
+		if (shapes[p_nbr].set == 0)
+		{
+			while (0 == ft_trypiece(shapes, map, p_nbr, x, y)
+				&& (x != 4 && y != 4))
+			{
+				x++;
+				if (x == 4 && y != 4)
+				{
+					x = 0;
+					y++;
+				}
+			}
+		}
+	}
 }

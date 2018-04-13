@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 16:43:56 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/10 15:10:38 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/13 14:58:07 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	ft_strerror(t_shapes *shapes, char *square, int fd, int code)
 	close(fd);
 	exit(EXIT_FAILURE);
 }
+
 
 void	printcolor(void)
 {
@@ -94,6 +95,7 @@ int		main(int ac, char **av)
 	//	ft_putnbr(shapes[i].shape);
 	//start(shapes);
 	printcolor();
+	start(shapes);
 	free(shapes);								// free the struct
 	free(square);
 	close(fd);

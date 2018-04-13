@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/12 17:43:56 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/13 15:11:28 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,33 +33,36 @@
 char	**ft_playground(int p_nbr)
 {
 	int		base;
-	int		i;
 	int		r;
+	int		i;
 	char	**tab;
 
-	base = ft_power(4, p_nbr) / 2;
 	r = 0;
 	i = 0;
-	if (!(tab = (char**)malloc(sizeof(**tab) * base)))
+	base = p_nbr * 4;
+	while (ft_sqrt(base) == 0)
+		base++;
+	base = ft_sqrt(base);
+	printf("-%d-\n", base);
+	if (!(tab = (char**)malloc(sizeof(char*) * (base + 1))))
 		return (NULL);
-	while (i < 15)
+	while (i < base)
 	{
-		if (!(tab[i] = (char*)malloc(sizeof(*tab) * base)))
+		if (!(tab[i] = (char*)malloc(sizeof(char) * (base + 1))))
 			return (NULL);
-		while (tab[i])
-		{
-			tab[i][r] = '.';
-			r++;
-			i++;
-		}
+		while (r < base)
+			tab[i][r++] = '.';
+		tab[i][r] = '\0';
+		i++;
 		r = 0;
 	}
-	return(tab);
+	tab[i] = NULL;
+	return (tab);
 }
 
-int	ft_is_valid(char *map, int x, int y)
+int	ft_is_valid(char **map, int x, int y)
 {
-	if (map[x][y] == NULL)
+	if (map[x][y] == '.')
 	{
 		if (x >= 0 && y >= 0)
 			return (1);
@@ -67,39 +70,53 @@ int	ft_is_valid(char *map, int x, int y)
 	return (0);
 }
 
-void	ft_trypiece(t_shapes *shapes, char **map, int p_nbr)
+void	ft_trypiece(t_shapes *shapes, char **map, int p_nbr, int x, int y)
 {
-	int	x;
-	int	y;
+	int valid;
 
-	x = 0;
-	y = 0;
+	valid = 0;
 	if (shapes[p_nbr].shape == 0)
-		ft_putI(int x, int y, char **map, p_nbr);
+		valid = ft_putI(x, y, map, shapes, p_nbr);
 	if (shapes[p_nbr].shape == 1)
-		ft_putJ(int x, int y, char **map, p_nbr);
+		valid = ft_putJ(x, y, map, shapes, p_nbr);
 	if (shapes[p_nbr].shape == 2)
-		ft_putL(int x, int y, char **map, p_nbr);
+		valid = ft_putL(x, y, map, shapes, p_nbr);
 	if (shapes[p_nbr].shape == 3)
-		ft_putO(int x, int y, char **map, p_nbr);
+		valid = ft_putO(x, y, map);
 	if (shapes[p_nbr].shape == 4)
-		ft_putS(int x, int y, char **map, p_nbr);
+		valid = ft_putS(x, y, map, shapes, p_nbr);
 	if (shapes[p_nbr].shape == 5)
-		ft_putT(int x, int y, char **map, p_nbr);
+		valid = ft_putT(x, y, map, shapes, p_nbr);
 	if (shapes[p_nbr].shape == 6)
-		ft_putZ(int x, int y, char **map, p_nbr);
+		valid = ft_putZ(x, y, map, shapes, p_nbr);
+	printf("%d\n", valid);
 }
 
 int		start(t_shapes *shapes)
 {
 	char	**map;
 	int		p_nbr;
+	int		r;
+	int		i;
 
+	r = 0;
+	i = 0;
 	p_nbr = 0;
-	while (shapes[p_nbr].shape)
-		++p_nbr;
+	while (shapes[p_nbr].letter)
+		p_nbr++;
+	printf("nombre de piece :%d\n", p_nbr);
 	map = ft_playground(p_nbr);
+	while (map[r])
+	{
+		while (map[r][i])
+		{
+			ft_putchar(map[r][i]);
+			i++;
+		}
+		ft_putchar('\n');
+		r++;
+		i = 0;
+	}
 	ft_trypiece(shapes, map, p_nbr);
-	//printf("%d\n", shapes[0].shape);
 	return (0);
 }
