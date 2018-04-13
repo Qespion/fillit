@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 21:19:09 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/13 12:48:37 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/13 18:31:47 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,17 @@
 **  #
 ** ##
 */
-int	ft_putJN(int x, int y, char **map)
+int	ft_putjn(int x, int y, char **map)
 {
-	int	i;
 	int	is_valid;
 
-	i = 0;
-	is_valid = 1;
-	while (i < 3 && is_valid == 1)
-	{
-		is_valid = ft_is_valid(map, x, y);
-		y++;
-		i++;
-	}
+	is_valid = ft_is_valid(map, x, y);
 	if (is_valid == 1)
-	{
-		x--;
-		is_valid = ft_is_valid(map, x, y - 1);
-	}
+		is_valid = ft_is_valid(map, x, y + 1);
+	if (is_valid == 1)
+		is_valid = ft_is_valid(map, x, y + 2);
+	if (is_valid == 1)
+		is_valid = ft_is_valid(map, x - 1, y + 2);
 	if (is_valid == 1)
 		return (1);
 	return (0);
@@ -43,19 +36,17 @@ int	ft_putJN(int x, int y, char **map)
 /*  #
 **  ###
 */
-int	ft_putJS(int x, int y, char **map)
+int	ft_putjs(int x, int y, char **map)
 {
-	int	i;
 	int	is_valid;
 
-	i = 0;
-	is_valid = ft_is_valid(map, x + 1, y);
-	while (i < 3 && is_valid == 1)
-	{
-		is_valid = ft_is_valid(map, x, y);
-		y++;
-		i++;
-	}
+	is_valid = ft_is_valid(map, x, y);
+	if (is_valid == 1)
+		is_valid = ft_is_valid(map, x, y + 1);
+	if (is_valid == 1)
+		is_valid = ft_is_valid(map, x + 1, y + 1);
+	if (is_valid == 1)
+		is_valid = ft_is_valid(map, x, y + 2);
 	if (is_valid == 1)
 		return (1);
 	return (0);
@@ -65,23 +56,17 @@ int	ft_putJS(int x, int y, char **map)
 **  #
 **  #
 */
-int	ft_putJE(int x, int y, char **map)
+int	ft_putje(int x, int y, char **map)
 {
-	int	i;
 	int	is_valid;
 
-	i = 0;
 	is_valid = ft_is_valid(map, x, y);
-	y++;
 	if (is_valid == 1)
-		is_valid = ft_is_valid(map, x, y);
-	x++;
-	while (is_valid == 1 && i < 2)
-	{
-		is_valid = ft_is_valid(map, x, y);
-		x++;
-		i++;
-	}
+		is_valid = ft_is_valid(map, x + 1, y);
+	if (is_valid == 1)
+		is_valid = ft_is_valid(map, x, y + 1);
+	if (is_valid == 1)
+		is_valid = ft_is_valid(map, x, y + 2);
 	if (is_valid == 1)
 		return (1);
 	return (0);
@@ -90,21 +75,17 @@ int	ft_putJE(int x, int y, char **map)
 /*  ###
 **    #
 */
-int	ft_putJW(int x, int y, char **map)
+int	ft_putjw(int x, int y, char **map)
 {
-	int	i;
 	int	is_valid;
 
-	i = 0;
-	is_valid = 1;
-	while (is_valid == 1 && i < 3)
-	{
-		is_valid = ft_is_valid(map, x, y);
-		i++;
-		x++;
-	}
+	is_valid = ft_is_valid(map, x, y);
 	if (is_valid == 1)
-		is_valid = ft_is_valid(map, x - 1, y + 1);
+		is_valid = ft_is_valid(map, x + 1, y);
+	if (is_valid == 1)
+		is_valid = ft_is_valid(map, x + 2, y);
+	if (is_valid == 1)
+		is_valid = ft_is_valid(map, x + 2, y + 1);
 	if (is_valid == 1)
 		return (1);
 	return (0);
@@ -115,12 +96,12 @@ int	ft_putJ(int x, int y, char **map, t_shapes *shapes, int p_nbr)
 	int	is_valid;
 
 	if (shapes[p_nbr].direction == 0)
-		is_valid = ft_putJN(x, y, map);
+		is_valid = ft_putjn(x, y, map);
 	if (shapes[p_nbr].direction == 1)
-		is_valid = ft_putJE(x, y, map);
+		is_valid = ft_putje(x, y, map);
 	if (shapes[p_nbr].direction == 2)
-		is_valid = ft_putJS(x, y, map);
+		is_valid = ft_putjs(x, y, map);
 	if (shapes[p_nbr].direction == 3)
-		is_valid = ft_putJW(x, y, map);
+		is_valid = ft_putjw(x, y, map);
 	return (is_valid);
 }
