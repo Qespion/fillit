@@ -6,7 +6,7 @@
 #    By: oespion <oespion@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/07 16:25:30 by groussel          #+#    #+#              #
-#    Updated: 2018/04/13 18:43:49 by oespion          ###   ########.fr        #
+#    Updated: 2018/04/14 13:47:52 by oespion          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,8 @@ SRC_BAS	=	main.c		\
 			ft_wrto.c	\
 			ft_wrts.c	\
 			ft_wrtt.c	\
-			ft_wrtz.c
+			ft_wrtz.c	\
+			ft_solve.c
 
 SRCS	=	$(addprefix $(SRC_DIR), $(SRC_BAS))
 OBJS	=	$(addprefix $(OBJ_DIR), $(SRC_BAS:.c=.o))

@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 16:43:56 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/13 14:58:07 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/14 11:18:33 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_strerror(t_shapes *shapes, char *square, int fd, int code)
 	exit(EXIT_FAILURE);
 }
 
-
+/*
 void	printcolor(void)
 {
 		ft_putendl(CT_MAROON CB_MAROON "TOTOR" C_RESET);
@@ -73,7 +73,7 @@ void	printcolor(void)
 		ft_putendl(CT_BLACK CB_BLACK "TOTOR" C_RESET);
 		ft_putendl(CT_THISTLE1 CB_THISTLE1 "TOTOR" C_RESET);
 }
-
+*/
 int		main(int ac, char **av)
 {
 	t_shapes		*shapes;
@@ -94,7 +94,6 @@ int		main(int ac, char **av)
 	//while (shapes[++i].shape != -1)
 	//	ft_putnbr(shapes[i].shape);
 	//start(shapes);
-	printcolor();
 	start(shapes);
 	free(shapes);								// free the struct
 	free(square);

@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/13 17:41:53 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/14 14:01:41 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,34 @@
 
 #include "fillit.h"
 #include "libft.h"
+
+char	**ft_bigger_pg(char **map)
+{
+	int		size;
+	char	**n_map;
+	int		r;
+	int		i;
+
+	i = 0;
+	size = 0;
+	while (map[size])
+		size++;
+	ft_free_tab(map);
+	if (!(n_map = (char**)malloc(sizeof(char*) * (size + 1))))
+		return (NULL);
+	while (i < size)
+	{
+		r = 0;
+		if (!(n_map[i] = (char*)malloc(sizeof(char) * (size))))
+			return (NULL);
+		while (r < size)
+			n_map[i][r++] = '.';
+		n_map[i][r] = '\0';
+		i++;
+	}
+	n_map[i] = NULL;
+	return (n_map);
+}
 
 char	**ft_playground(int p_nbr)
 {
@@ -62,15 +90,23 @@ char	**ft_playground(int p_nbr)
 
 int	ft_is_valid(char **map, int x, int y)
 {
+	int	r;
+
+	r = 0;
+	while (map[r])
+		r++;
+	if (x < 0 || y < 0 || y >= r || x >= r)
+		return (0);
 	if (map[x][y] == '.')
 	{
 		if (x >= 0 && y >= 0)
 			return (1);
 	}
 	return (0);
+	ft_print(map);
 }
 
-void	ft_trypiece(t_shapes *shapes, char **map, int p_nbr, int x, int y)
+int	ft_trypiece(t_shapes *shapes, char **map, int p_nbr, int x, int y)
 {
 	int valid;
 
@@ -89,7 +125,7 @@ void	ft_trypiece(t_shapes *shapes, char **map, int p_nbr, int x, int y)
 		valid = ft_putT(x, y, map, shapes, p_nbr);
 	if (shapes[p_nbr].shape == 6)
 		valid = ft_putZ(x, y, map, shapes, p_nbr);
-	printf("%d\n", valid);
+	return (valid);
 }
 
 int		start(t_shapes *shapes)
@@ -106,17 +142,7 @@ int		start(t_shapes *shapes)
 		p_nbr++;
 	printf("nombre de piece :%d\n", p_nbr);
 	map = ft_playground(p_nbr);
-	while (map[r])
-	{
-		while (map[r][i])
-		{
-			ft_putchar(map[r][i]);
-			i++;
-		}
-		ft_putchar('\n');
-		r++;
-		i = 0;
-	}
-	ft_trypiece(shapes, map, p_nbr, 1, 1);
+	ft_solve(map, shapes, 0, 0, 0);
+//	ft_mod_tab(map, shapes, 1, 0, 0, 0);
 	return (0);
 }
