@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 23:12:22 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/12 15:36:02 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/14 15:50:50 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int		checkT(char **tab)
 	return (0);
 }
 
-//  #
-// ###
-
+/*  #
+** ###
+*/
 int		checkTN(char **tab)
 {
 	int		x;
@@ -57,10 +57,10 @@ int		checkTN(char **tab)
 	return (0);
 }
 
-// #
-// ##
-// #
-
+/* #
+** ##
+** #
+*/
 int		checkTE(char **tab)
 {
 	int		x;
@@ -80,9 +80,9 @@ int		checkTE(char **tab)
 	return (0);
 }
 
-// ###
-//  #
-
+/* ###
+**  #
+*/
 int		checkTS(char **tab)
 {
 	int		x;
@@ -102,10 +102,10 @@ int		checkTS(char **tab)
 	return (0);
 }
 
-//  #
-// ##
-//  #
-
+/*  #
+** ##
+**  #
+*/
 int		checkTW(char **tab)
 {
 	int		x;

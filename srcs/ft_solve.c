@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 14:21:54 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/14 14:06:06 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/14 18:33:48 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,8 @@ void	ft_print(char **map)
 	}
 }
 
-void	ft_mod_tab(char **map, t_shapes *shapes, int we, int p_nbr, int x, int y)
+void	ft_mod_tab(char **map, t_shapes *shapes, int we, int p_nbr)
 {
-	if (we == 1)
-	{
-		shapes[p_nbr].x = x;
-		shapes[p_nbr].y = y;
-	}
 	while (shapes[p_nbr].letter)
 	{
 		if (shapes[p_nbr].shape == 0)
@@ -65,8 +60,13 @@ void	ft_solve(char **map, t_shapes *shapes, int p_nbr, int x, int y)
 {
 	if (!shapes[p_nbr].letter)
 		return (ft_print(map));
+	shapes[p_nbr].x = x;
+	shapes[p_nbr].y = y;
+	printf("%c\n", shapes[p_nbr].letter);
+//	printf("%d\n", shapes[p_nbr].x);
 	if (ft_trypiece(shapes, map, p_nbr, x, y) == 0 && shapes[p_nbr].letter)
 	{
+		printf("test\n");
 		x++;
 		if (x <= 5)
 		{
@@ -81,15 +81,18 @@ void	ft_solve(char **map, t_shapes *shapes, int p_nbr, int x, int y)
 		}
 		if (y == 5)
 		{
+			printf("tu rentres pas la !\n");
 			p_nbr--;
-			ft_mod_tab(map, shapes, 0, p_nbr, x, y);
-			ft_solve(map, shapes, p_nbr, shapes[p_nbr].x, shapes[p_nbr].y);
+			ft_mod_tab(map, shapes, 0, p_nbr);
+			ft_solve(map, shapes, p_nbr, x, y);
 		}
 		ft_trypiece(shapes, map, p_nbr, x, y);
 	}
 	if (ft_trypiece(shapes, map, p_nbr, x, y) == 1 && shapes[p_nbr].letter)
 	{
-		ft_mod_tab(map, shapes, 1, p_nbr, x, y);
+		printf("succeed\n");
+		ft_mod_tab(map, shapes, 1, p_nbr);
 		ft_solve(map, shapes, p_nbr + 1, 0 , 0);
+		ft_print(map);
 	}
 }

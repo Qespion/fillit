@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/14 14:05:46 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/14 14:12:38 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,8 +193,8 @@ void	ft_wrtJ(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
 void	ft_solve(char **map, t_shapes *shapes, int p_nbr, int x, int y);
 char	**ft_bigger_pg(char **map);
 void	ft_free_tab(char **tab);
-int	ft_trypiece(t_shapes *shapes, char **map, int p_nbr, int x, int y);
-void	ft_mod_tab(char **map, t_shapes *shapes, int we, int p_nbr, int x, int y);
+int		ft_trypiece(t_shapes *shapes, char **map, int p_nbr, int x, int y);
+void	ft_mod_tab(char **map, t_shapes *shapes, int we, int p_nbr);
 void	ft_print(char **map);
 
 #endif

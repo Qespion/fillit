@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tetriz.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 23:26:44 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/10 13:02:22 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/14 15:50:53 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int		checkZ(char **tab)
 	return (0);
 }
 
-//  #
-// ##
-// #
-
+/*  #
+** ##
+** #
+*/
 int		checkZN(char **tab)
 {
 	int		x;
@@ -52,9 +52,9 @@ int		checkZN(char **tab)
 	return (0);
 }
 
-// ##
-//  ##
-
+/* ##
+**  ##
+*/
 int		checkZE(char **tab)
 {
 	int		x;

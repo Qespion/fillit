@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/14 14:01:41 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/14 18:24:51 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,9 @@ int	ft_trypiece(t_shapes *shapes, char **map, int p_nbr, int x, int y)
 	int valid;
 
 	valid = 0;
+	printf("%d\n",p_nbr);
+	printf("--%d ", shapes[p_nbr].x);
+	printf("%d--\n", shapes[p_nbr].y);
 	if (shapes[p_nbr].shape == 0)
 		valid = ft_putI(x, y, map, shapes, p_nbr);
 	if (shapes[p_nbr].shape == 1)
