@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 14:21:54 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/15 16:21:12 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/15 17:19:40 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,42 +58,44 @@ void	ft_mod_tab(char **map, t_shapes *shapes, int we, int p_nbr)
 
 void	ft_solve(char **map, t_shapes *shapes, int p_nbr, int x, int y)
 {
-	if (!shapes)
-		return (ft_print(map));
-	shapes[p_nbr].x = x;
-	shapes[p_nbr].y = y;
-	printf("%c\n", shapes[p_nbr].letter);
-//	printf("%d\n", shapes[p_nbr].x);
-	if (ft_trypiece(shapes, map, p_nbr, x, y) == 0 && shapes[p_nbr].letter)
-	{
-		printf("test\n");
-		shapes[p_nbr].x++;
-		if (shapes[p_nbr].x < 5)
-		{
-			shapes[p_nbr].x = 0;
-			shapes[p_nbr].y++;
-		}
-		if (shapes[p_nbr].y == 5)
-		{
-			if (shapes[p_nbr].letter == 'B')
-			{
-				printf("rentre la \n");
-				map = ft_bigger_pg(map);
-				shapes[p_nbr].x = 0;
-				shapes[p_nbr].y = 0;
-			}
-			printf("tu rentres pas la !\n");
-			p_nbr--;
-			ft_mod_tab(map, shapes, 0, p_nbr);
-			ft_solve(map, shapes, p_nbr, shapes[p_nbr].x, shapes[p_nbr].y);
-		}
-		else
-			ft_solve(map, shapes, p_nbr, shapes[p_nbr].x, shapes[p_nbr].y);
-	}
-	if (ft_trypiece(shapes, map, p_nbr, x, y) == 1 && shapes[p_nbr].letter)
-	{
-		printf("succeed\n");
-		ft_mod_tab(map, shapes, 1, p_nbr);
+	ft_putstr("ready to rumble\n");
+	printf("pose de piece : %d\n", ft_trypiece(shapes, map, p_nbr, x, y));
+	printf("shape: %d\n", shapes[p_nbr].shape);
+	if (!shapes[p_nbr].letter)
 		ft_print(map);
+	else if (ft_trypiece(shapes, map, p_nbr, x, y) == 0)
+	{
+		x++;
+		if ((size_t)x >= ft_strlen(map[0]))
+		{
+			ft_putstr("larger\n");
+			y++;
+			x = 0;
+		}
+		else if ((size_t)y >= ft_strlen(map[0]) && shapes[p_nbr].letter == 'A')
+		{
+			ft_putstr("bigger\n");
+			map = ft_bigger_pg(map);
+			x = 0;
+			y = 0;
+			ft_solve(map, shapes, p_nbr, x, y);
+		}
+		else if ((size_t)y == ft_strlen(map[0]))
+		{
+			ft_putstr("faster\n");
+			p_nbr--;
+			x = shapes[p_nbr].x;
+			y = shapes[p_nbr].y;
+			ft_mod_tab(map, shapes, 0, p_nbr);
+			ft_solve(map, shapes, p_nbr, x + 1, y);
+		}
+	}
+	else if (ft_trypiece(shapes, map, p_nbr, x, y) == 1)
+	{
+		ft_putstr("t la\n");
+		shapes[p_nbr].x = x;
+		shapes[p_nbr].y = y;
+		ft_mod_tab(map, shapes, 1, p_nbr);
+		ft_solve(map, shapes, p_nbr + 1, 0, 0);
 	}
 }
