@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/15 17:07:50 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/15 18:09:16 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,9 +108,9 @@ int	ft_trypiece(t_shapes *shapes, char **map, int p_nbr, int x, int y)
 	int valid;
 
 	valid = 0;
-	printf("%d\n",p_nbr);
-	printf("--%d ", shapes[p_nbr].x);
-	printf("%d--\n", shapes[p_nbr].y);
+	//printf("%d\n",p_nbr);
+	//printf("--%d ", shapes[p_nbr].x);
+	//printf("%d--\n", shapes[p_nbr].y);
 	if (shapes[p_nbr].shape == 0)
 		valid = ft_putI(x, y, map, shapes, p_nbr);
 	else if (shapes[p_nbr].shape == 1)
