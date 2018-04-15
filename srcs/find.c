@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/14 18:24:51 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/15 15:51:13 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ char	**ft_bigger_pg(char **map)
 	size = 0;
 	while (map[size])
 		size++;
+	size++;
 	ft_free_tab(map);
 	if (!(n_map = (char**)malloc(sizeof(char*) * (size + 1))))
 		return (NULL);
@@ -98,12 +99,8 @@ int	ft_is_valid(char **map, int x, int y)
 	if (x < 0 || y < 0 || y >= r || x >= r)
 		return (0);
 	if (map[x][y] == '.')
-	{
-		if (x >= 0 && y >= 0)
-			return (1);
-	}
+		return (1);
 	return (0);
-	ft_print(map);
 }
 
 int	ft_trypiece(t_shapes *shapes, char **map, int p_nbr, int x, int y)
@@ -116,17 +113,17 @@ int	ft_trypiece(t_shapes *shapes, char **map, int p_nbr, int x, int y)
 	printf("%d--\n", shapes[p_nbr].y);
 	if (shapes[p_nbr].shape == 0)
 		valid = ft_putI(x, y, map, shapes, p_nbr);
-	if (shapes[p_nbr].shape == 1)
+	else if (shapes[p_nbr].shape == 1)
 		valid = ft_putJ(x, y, map, shapes, p_nbr);
-	if (shapes[p_nbr].shape == 2)
+	else if (shapes[p_nbr].shape == 2)
 		valid = ft_putL(x, y, map, shapes, p_nbr);
-	if (shapes[p_nbr].shape == 3)
+	else if (shapes[p_nbr].shape == 3)
 		valid = ft_putO(x, y, map);
-	if (shapes[p_nbr].shape == 4)
+	else if (shapes[p_nbr].shape == 4)
 		valid = ft_putS(x, y, map, shapes, p_nbr);
-	if (shapes[p_nbr].shape == 5)
+	else if (shapes[p_nbr].shape == 5)
 		valid = ft_putT(x, y, map, shapes, p_nbr);
-	if (shapes[p_nbr].shape == 6)
+	else if (shapes[p_nbr].shape == 6)
 		valid = ft_putZ(x, y, map, shapes, p_nbr);
 	return (valid);
 }
@@ -146,6 +143,5 @@ int		start(t_shapes *shapes)
 	printf("nombre de piece :%d\n", p_nbr);
 	map = ft_playground(p_nbr);
 	ft_solve(map, shapes, 0, 0, 0);
-//	ft_mod_tab(map, shapes, 1, 0, 0, 0);
 	return (0);
 }

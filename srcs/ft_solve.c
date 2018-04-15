@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 14:21:54 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/14 18:33:48 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/15 16:21:12 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_mod_tab(char **map, t_shapes *shapes, int we, int p_nbr)
 
 void	ft_solve(char **map, t_shapes *shapes, int p_nbr, int x, int y)
 {
-	if (!shapes[p_nbr].letter)
+	if (!shapes)
 		return (ft_print(map));
 	shapes[p_nbr].x = x;
 	shapes[p_nbr].y = y;
@@ -67,32 +67,33 @@ void	ft_solve(char **map, t_shapes *shapes, int p_nbr, int x, int y)
 	if (ft_trypiece(shapes, map, p_nbr, x, y) == 0 && shapes[p_nbr].letter)
 	{
 		printf("test\n");
-		x++;
-		if (x <= 5)
+		shapes[p_nbr].x++;
+		if (shapes[p_nbr].x < 5)
 		{
-			x = 0;
-			y++;
+			shapes[p_nbr].x = 0;
+			shapes[p_nbr].y++;
 		}
-		if (shapes[p_nbr].letter == 'A' && y == 5)
+		if (shapes[p_nbr].y == 5)
 		{
-			map = ft_bigger_pg(map);
-			x = 0;
-			y = 0;
-		}
-		if (y == 5)
-		{
+			if (shapes[p_nbr].letter == 'B')
+			{
+				printf("rentre la \n");
+				map = ft_bigger_pg(map);
+				shapes[p_nbr].x = 0;
+				shapes[p_nbr].y = 0;
+			}
 			printf("tu rentres pas la !\n");
 			p_nbr--;
 			ft_mod_tab(map, shapes, 0, p_nbr);
-			ft_solve(map, shapes, p_nbr, x, y);
+			ft_solve(map, shapes, p_nbr, shapes[p_nbr].x, shapes[p_nbr].y);
 		}
-		ft_trypiece(shapes, map, p_nbr, x, y);
+		else
+			ft_solve(map, shapes, p_nbr, shapes[p_nbr].x, shapes[p_nbr].y);
 	}
 	if (ft_trypiece(shapes, map, p_nbr, x, y) == 1 && shapes[p_nbr].letter)
 	{
 		printf("succeed\n");
 		ft_mod_tab(map, shapes, 1, p_nbr);
-		ft_solve(map, shapes, p_nbr + 1, 0 , 0);
 		ft_print(map);
 	}
 }
