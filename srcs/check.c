@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:42:19 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/10 12:22:34 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/15 19:51:43 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		checkfile(t_shapes *shapes, char **square, int fd)
 		{
 			shapes[i].x = 0;
 			shapes[i].y = 0;
-			shapes[i].direction = 0;
+			shapes[i].direction = checkdir(*square);
 			shapes[i].set = 0;
 			shapes[i].letter = 'A' + i;
 		}
@@ -78,8 +78,33 @@ int		checkshape(char *square)
 	f[6] = checkZ;
 	i = -1;
 	while (++i < 7)
-		if (f[i](tab))
+		if (f[i](tab) >= 0)
+		{
+			printf("%d\n", i);
 			return (i);
+		}
+	return (-1);
+}
+
+int		checkdir(char *square)
+{
+	int		(*f[7])(char **tab);
+	char	**tab;
+	int		i;
+	int		result;
+
+	tab = ft_strsplit(square, '\n');
+	f[0] = checkI;
+	f[1] = checkJ;
+	f[2] = checkL;
+	f[3] = checkO;
+	f[4] = checkS;
+	f[5] = checkT;
+	f[6] = checkZ;
+	i = -1;
+	while (++i < 7)
+		if ((result = f[i](tab)) >= 0)
+			return (result);
 	return (-1);
 }
 

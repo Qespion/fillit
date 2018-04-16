@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tetrio.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 23:07:30 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/14 11:18:58 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/15 19:29:10 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 int		checkO(char **tab)
 {
 	if (checkON(tab))
-		return (1);
-	return (0);
+		return (0);
+	return (-1);
 }
 
 /* ##

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tetrij.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 22:25:40 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/14 15:51:33 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/15 19:28:54 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@
 int		checkJ(char **tab)
 {
 	if (checkJN(tab))
-		return (1);
+		return (0);
 	if (checkJE(tab))
-		return (2);
+		return (1);
 	if (checkJS(tab))
-		return (3);
+		return (2);
 	if (checkJW(tab))
-		return (4);
-	return (0);
+		return (3);
+	return (-1);
 }
 
 /*  #

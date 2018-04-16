@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putz.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/12 15:06:32 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/13 16:20:40 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/15 20:53:45 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,9 @@ int	ft_putZ(int x, int y, char **map, t_shapes *shapes, int p_nbr)
 	int	is_valid;
 
 	is_valid = 0;
-	if (shapes[p_nbr].direction == 0
-		|| shapes[p_nbr].direction == 2)
+	if (shapes[p_nbr].direction == 0)
 		is_valid = ft_putzN(x, y, map);
-	else if (shapes[p_nbr].direction == 1
-		|| shapes[p_nbr].direction == 3)
+	else if (shapes[p_nbr].direction == 1)
 		is_valid = ft_putzH(x, y, map);
 	if (is_valid == 1)
 		return (1);

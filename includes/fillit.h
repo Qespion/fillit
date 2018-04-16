@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/14 14:12:38 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/15 19:09:08 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ int		setmap(char ***map);
 */
 int		checkfile(t_shapes *shapes, char **square, int fd);
 int		checkshape(char *square);
+int		checkdir(char *square);
 int		checkchars(char *square);
 
 /*

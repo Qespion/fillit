@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/15 18:09:16 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/16 11:52:47 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	ft_is_valid(char **map, int x, int y)
 		r++;
 	if (x < 0 || y < 0 || y >= r || x >= r)
 		return (0);
-	if (map[x][y] == '.')
+	if (map[y][x] == '.')
 		return (1);
 	return (0);
 }

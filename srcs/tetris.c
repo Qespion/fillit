@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tetris.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 23:22:10 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/13 10:13:01 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/15 19:29:22 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@
 int		checkS(char **tab)
 {
 	if (checkSN(tab))
-		return (1);
+		return (0);
 	if (checkSE(tab))
-		return (2);
-	return (0);
+		return (1);
+	return (-1);
 }
 
 /* #

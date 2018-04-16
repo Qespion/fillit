@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putj.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 21:19:09 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/13 18:31:47 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/15 20:26:38 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ int	ft_putjs(int x, int y, char **map)
 
 	is_valid = ft_is_valid(map, x, y);
 	if (is_valid == 1)
-		is_valid = ft_is_valid(map, x, y + 1);
+		is_valid = ft_is_valid(map, x + 1, y);
 	if (is_valid == 1)
-		is_valid = ft_is_valid(map, x + 1, y + 1);
+		is_valid = ft_is_valid(map, x, y + 1);
 	if (is_valid == 1)
 		is_valid = ft_is_valid(map, x, y + 2);
 	if (is_valid == 1)
@@ -62,11 +62,11 @@ int	ft_putje(int x, int y, char **map)
 
 	is_valid = ft_is_valid(map, x, y);
 	if (is_valid == 1)
-		is_valid = ft_is_valid(map, x + 1, y);
-	if (is_valid == 1)
 		is_valid = ft_is_valid(map, x, y + 1);
 	if (is_valid == 1)
-		is_valid = ft_is_valid(map, x, y + 2);
+		is_valid = ft_is_valid(map, x + 1, y + 1);
+	if (is_valid == 1)
+		is_valid = ft_is_valid(map, x + 2, y + 1);
 	if (is_valid == 1)
 		return (1);
 	return (0);

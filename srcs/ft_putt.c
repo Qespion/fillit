@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/12 13:57:21 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/13 18:29:24 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/15 20:59:04 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ int	ft_putts(int x, int y, char **map)
 	if (is_valid == 1)
 		is_valid = ft_is_valid(map, x + 1, y);
 	if (is_valid == 1)
-		is_valid = ft_is_valid(map, x + 2, y);
-	if (is_valid == 1)
 		is_valid = ft_is_valid(map, x + 1, y + 1);
+	if (is_valid == 1)
+		is_valid = ft_is_valid(map, x + 2, y);
 	if (is_valid == 1)
 		return (1);
 	return (0);

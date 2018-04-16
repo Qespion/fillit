@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tetrit.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/08 23:12:22 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/14 15:50:50 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/15 19:29:31 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@
 int		checkT(char **tab)
 {
 	if (checkTN(tab))
-		return (1);
+		return (0);
 	if (checkTE(tab))
-		return (2);
+		return (1);
 	if (checkTS(tab))
-		return (3);
+		return (2);
 	if (checkTW(tab))
-		return (4);
-	return (0);
+		return (3);
+	return (-1);
 }
 
 /*  #
