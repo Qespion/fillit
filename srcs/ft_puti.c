@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 16:58:26 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/16 13:25:05 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/16 13:56:58 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,9 @@ int	ft_putin(int x, int y, char **map)
 	int	is_valid;
 
 	is_valid = 1;
-	i = 0;
-	while (i < 4 && is_valid == 1)
-	{
-		is_valid = ft_is_valid(map, x, y);
+	i = -1;
+	while (++i < 4 && ft_is_valid(map, x, y))
 		x++;
-		i++;
-	}
 	if (i == 4)
 		return (1);
 	return (0);
@@ -37,13 +33,9 @@ int	ft_putie(int x, int y, char **map)
 	int	is_valid;
 
 	is_valid = 1;
-	i = 0;
-	while (i < 4 && is_valid == 1)
-	{
-		is_valid = ft_is_valid(map, x, y);
+	i = -1;
+	while (++i < 4 && ft_is_valid(map, x, y))
 		y++;
-		i++;
-	}
 	if (i == 4)
 		return (1);
 	return (0);
