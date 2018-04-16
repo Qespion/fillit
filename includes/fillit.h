@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/15 19:09:08 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/16 15:35:23 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,13 +179,13 @@ int	ft_sqrt(int nb);
 ** Write functions
 */
 
-void	ft_wrtI(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
-void	ft_wrtS(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
-void	ft_wrtT(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
-void	ft_wrtZ(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
-void	ft_wrtO(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
-void	ft_wrtL(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
-void	ft_wrtJ(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we);
+void	ft_wrtI(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+void	ft_wrtS(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+void	ft_wrtT(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+void	ft_wrtZ(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+void	ft_wrtO(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+void	ft_wrtL(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+void	ft_wrtJ(int x, int y, char **map, t_shapes *shapes, int p_nbr);
 
 /*
 ** Solve
@@ -195,7 +195,7 @@ void	ft_solve(char **map, t_shapes *shapes, int p_nbr, int x, int y);
 char	**ft_bigger_pg(char **map);
 void	ft_free_tab(char **tab);
 int		ft_trypiece(t_shapes *shapes, char **map, int p_nbr, int x, int y);
-void	ft_mod_tab(char **map, t_shapes *shapes, int we, int p_nbr);
+void	ft_mod_tab(char **map, t_shapes *shapes, int p_nbr);
 void	ft_print(char **map);
 
 #endif

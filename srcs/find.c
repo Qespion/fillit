@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/16 13:22:21 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/16 15:12:20 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,7 @@ int		start(t_shapes *shapes)
 	r = 0;
 	i = 0;
 	p_nbr = 0;
-	while (shapes[p_nbr].letter)
+	while (shapes[p_nbr].shape != -1)
 		p_nbr++;
 	//printf("nombre de piece: %d\n", p_nbr);
 	map = ft_playground(p_nbr);
