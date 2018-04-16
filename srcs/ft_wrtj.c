@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 16:39:17 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/15 20:17:25 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/16 12:49:09 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_wrtje(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 		map[y][x] = shapes[p_nbr].letter;
 		map[y + 1][x]= shapes[p_nbr].letter;
 		map[y + 1][x + 1] = shapes[p_nbr].letter;
-		map[y - 1][x + 2] = shapes[p_nbr].letter;
+		map[y + 1][x + 2] = shapes[p_nbr].letter;
 	}
 	else
 	{

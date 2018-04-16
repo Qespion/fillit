@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 14:21:54 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/15 19:40:54 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/16 13:00:34 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ void	ft_mod_tab(char **map, t_shapes *shapes, int we, int p_nbr)
 
 void	ft_solve(char **map, t_shapes *shapes, int p_nbr, int x, int y)
 {
-	printf("x:%d, y:%d, len:%zu\n", x, y, ft_strlen(map[0]));
-	printf("shape:%d, letter:%c, dir:%d\n", shapes[p_nbr].shape, shapes[p_nbr].letter, shapes[p_nbr].direction);
+	//printf("x:%d, y:%d, len:%zu\n", x, y, ft_strlen(map[0]));
+	//printf("shape:%d, letter:%c, dir:%d\n", shapes[p_nbr].shape, shapes[p_nbr].letter, shapes[p_nbr].direction);
 	if (shapes[p_nbr].shape < 0)
 	{
 		ft_print(map);
@@ -65,36 +65,36 @@ void	ft_solve(char **map, t_shapes *shapes, int p_nbr, int x, int y)
 		x++;
 		if ((size_t)x >= ft_strlen(map[0]))
 		{
-			ft_putstr("larger\n");
+			//ft_putstr("larger\n");
 			y++;
 			x = 0;
 		}
 		if ((size_t)y >= ft_strlen(map[0]) && shapes[p_nbr].letter == 'A')
 		{
-			ft_putstr("bigger\n");
+			//ft_putstr("bigger\n");
 			map = ft_bigger_pg(map);
-			ft_print(map);
+			//ft_print(map);
 			x = 0;
 			y = 0;
 		}
 		else if ((size_t)y == ft_strlen(map[0]))
 		{
-			ft_putstr("faster\n");
+			//ft_putstr("faster\n");
 			p_nbr--;
 			x = shapes[p_nbr].x + 1;
 			y = shapes[p_nbr].y;
 			ft_mod_tab(map, shapes, 0, p_nbr);
 		}
-		sleep(1);
+		//sleep(1);
 		ft_solve(map, shapes, p_nbr, x, y);
 	}
 	else if (ft_trypiece(shapes, map, p_nbr, x, y))
 	{
-		ft_putstr("t la\n");
+		//ft_putstr("t la\n");
 		shapes[p_nbr].x = x;
 		shapes[p_nbr].y = y;
 		ft_mod_tab(map, shapes, 1, p_nbr);
-		ft_print(map);
+		//ft_print(map);
 		ft_solve(map, shapes, p_nbr + 1, 0, 0);
 	}
 }

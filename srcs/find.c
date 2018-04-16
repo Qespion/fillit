@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/16 11:52:47 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/16 12:59:43 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	**ft_playground(int p_nbr)
 	while (ft_sqrt(base) == 0)
 		base++;
 	base = ft_sqrt(base);
-	printf("base du tableau: %d\n", base);
+	//printf("base du tableau: %d\n", base);
 	if (!(tab = (char**)malloc(sizeof(char*) * (base + 1))))
 		return (NULL);
 	while (i < base)
@@ -93,9 +93,7 @@ int	ft_is_valid(char **map, int x, int y)
 {
 	int	r;
 
-	r = 0;
-	while (map[r])
-		r++;
+	r = ft_strlen(map[0]);
 	if (x < 0 || y < 0 || y >= r || x >= r)
 		return (0);
 	if (map[y][x] == '.')
@@ -140,7 +138,7 @@ int		start(t_shapes *shapes)
 	p_nbr = 0;
 	while (shapes[p_nbr].letter)
 		p_nbr++;
-	printf("nombre de piece: %d\n", p_nbr);
+	//printf("nombre de piece: %d\n", p_nbr);
 	map = ft_playground(p_nbr);
 	ft_solve(map, shapes, 0, 0, 0);
 	return (0);

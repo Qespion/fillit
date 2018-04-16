@@ -6,7 +6,7 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 15:23:00 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/15 20:06:54 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/16 12:58:52 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,6 @@
 #include "fillit.h"
 
 void	ft_wrtin(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
-{
-	if (we == 1)
-	{
-		map[y][x] = shapes[p_nbr].letter;
-		map[y + 1][x] = shapes[p_nbr].letter;
-		map[y + 2][x] = shapes[p_nbr].letter;
-		map[y + 3][x] = shapes[p_nbr].letter;
-	}
-	else
-	{
-		map[y][x] = '.';
-		map[y + 1][x] = '.';
-		map[y + 2][x] = '.';
-		map[y + 3][x] = '.';
-	}
-}
-
-void	ft_wrtie(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 {
 	if (we == 1)
 	{
@@ -46,6 +28,24 @@ void	ft_wrtie(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
 		map[y][x + 1] = '.';
 		map[y][x + 2] = '.';
 		map[y][x + 3] = '.';
+	}
+}
+
+void	ft_wrtie(int x, int y, char **map, t_shapes *shapes, int p_nbr, int we)
+{
+	if (we == 1)
+	{
+		map[y][x] = shapes[p_nbr].letter;
+		map[y + 1][x] = shapes[p_nbr].letter;
+		map[y + 2][x] = shapes[p_nbr].letter;
+		map[y + 3][x] = shapes[p_nbr].letter;
+	}
+	else
+	{
+		map[y][x] = '.';
+		map[y + 1][x] = '.';
+		map[y + 2][x] = '.';
+		map[y + 3][x] = '.';
 	}
 }
 
