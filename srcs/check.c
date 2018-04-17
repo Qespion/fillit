@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:42:19 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/16 13:23:28 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/17 14:09:02 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,7 @@ int		checkshape(char *square)
 	i = -1;
 	while (++i < 7)
 		if (f[i](tab) >= 0)
-		{
-			printf("%d\n", i);
 			return (i);
-		}
 	return (-1);
 }
 

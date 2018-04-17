@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 15:32:34 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/16 15:16:39 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/17 13:47:38 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_wrtSV(int x, int y, char **map, t_shapes *shapes, int p_nbr)
 		map[y + 1][x] = '.';
 		map[y + 1][x + 1]= '.';
 		map[y + 2][x + 1] = '.';
+		shapes[p_nbr].set = 0;
 	}
 }
 
@@ -48,6 +49,7 @@ void	ft_wrtSH(int x, int y, char **map, t_shapes *shapes, int p_nbr)
 		map[y][x + 1] = '.';
 		map[y + 1][x - 1] = '.';
 		map[y + 1][x] = '.';
+		shapes[p_nbr].set = 0;
 	}
 }
 

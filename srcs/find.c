@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/16 15:12:20 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/17 14:14:06 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	**ft_bigger_pg(char **map)
 	while (i < size)
 	{
 		r = 0;
-		if (!(n_map[i] = (char*)malloc(sizeof(char) * (size))))
+		if (!(n_map[i] = (char*)malloc(sizeof(char) * (size + 1))))
 			return (NULL);
 		while (r < size)
 			n_map[i][r++] = '.';

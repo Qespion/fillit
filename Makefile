@@ -6,13 +6,13 @@
 #    By: oespion <oespion@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/07 16:25:30 by groussel          #+#    #+#              #
-#    Updated: 2018/04/16 15:13:38 by oespion          ###   ########.fr        #
+#    Updated: 2018/04/17 14:12:47 by oespion          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	fillit
 
-FLAGS	=	-Wall -Wextra -Werror -fsanitize=address
+FLAGS	=	-Wall -Wextra -Werror -O3 -fsanitize=address
 
 SRC_DIR	=	srcs/
 OBJ_DIR =	objs/
