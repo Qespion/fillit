@@ -6,14 +6,14 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/12 09:08:53 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/19 12:05:47 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:30:31 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-int	ft_putLN(int x, int y, char **map)
+int	ft_putln(int x, int y, char **map)
 {
 	int	is_valid;
 
@@ -29,7 +29,7 @@ int	ft_putLN(int x, int y, char **map)
 	return (0);
 }
 
-int	ft_putLE(int x, int y, char **map)
+int	ft_putle(int x, int y, char **map)
 {
 	int	is_valid;
 
@@ -45,7 +45,7 @@ int	ft_putLE(int x, int y, char **map)
 	return (0);
 }
 
-int	ft_putLS(int x, int y, char **map)
+int	ft_putls(int x, int y, char **map)
 {
 	int	is_valid;
 
@@ -61,7 +61,7 @@ int	ft_putLS(int x, int y, char **map)
 	return (0);
 }
 
-int	ft_putLW(int x, int y, char **map)
+int	ft_putlw(int x, int y, char **map)
 {
 	int	is_valid;
 
@@ -77,17 +77,17 @@ int	ft_putLW(int x, int y, char **map)
 	return (0);
 }
 
-int	ft_putL(t_pos *xy, char **map, t_shapes *shapes, int p_nbr)
+int	ft_putl(t_pos *xy, char **map, t_shapes *shapes, int p_nbr)
 {
 	int	is_valid;
 
 	if (shapes[p_nbr].direction == 0)
-		is_valid = ft_putLN(xy->x, xy->y, map);
+		is_valid = ft_putln(xy->x, xy->y, map);
 	if (shapes[p_nbr].direction == 1)
-		is_valid = ft_putLE(xy->x, xy->y, map);
+		is_valid = ft_putle(xy->x, xy->y, map);
 	if (shapes[p_nbr].direction == 2)
-		is_valid = ft_putLS(xy->x, xy->y, map);
+		is_valid = ft_putls(xy->x, xy->y, map);
 	if (shapes[p_nbr].direction == 3)
-		is_valid = ft_putLW(xy->x, xy->y, map);
+		is_valid = ft_putlw(xy->x, xy->y, map);
 	return (is_valid);
 }

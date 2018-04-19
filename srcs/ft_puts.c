@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/12 14:43:38 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/19 12:06:43 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:34:38 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** ##
 **  #
 */
-int	ft_putsV(int x, int y, char **map)
+int	ft_putsv(int x, int y, char **map)
 {
 	int	i;
 	int	is_valid;
@@ -38,7 +38,7 @@ int	ft_putsV(int x, int y, char **map)
 /*  ##
 ** ##
 */
-int	ft_putsH(int x, int y, char **map)
+int	ft_putsh(int x, int y, char **map)
 {
 	int	i;
 	int	is_valid;
@@ -56,15 +56,15 @@ int	ft_putsH(int x, int y, char **map)
 	return (0);
 }
 
-int	ft_putS(t_pos *xy, char **map, t_shapes *shapes, int p_nbr)
+int	ft_puts(t_pos *xy, char **map, t_shapes *shapes, int p_nbr)
 {
 	int	is_valid;
 
 	is_valid = 0;
 	if (shapes[p_nbr].direction == 0)
-		is_valid = ft_putsV(xy->x, xy->y, map);
+		is_valid = ft_putsv(xy->x, xy->y, map);
 	else if (shapes[p_nbr].direction == 1)
-		is_valid = ft_putsH(xy->x, xy->y, map);
+		is_valid = ft_putsh(xy->x, xy->y, map);
 	if (is_valid == 1)
 		return (1);
 	return (0);
