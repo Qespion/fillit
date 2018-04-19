@@ -3,30 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 16:43:56 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/19 10:01:10 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:48:40 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** TODO:	[X] Check args
-**			[X] Error and exit function
-**			[X] Define colors
-**			[X] Check if file exist
-**			[X] Set array to doule array
-**
-** FUNC:	exit
-**			open / close
-**			malloc / free
-**			write / read
-**
-** BONUS:	[ ] Colors
-**			[ ] No leaks
-**
-** FIXME:	[X] Segv if files are passed in arguments
-*/
 
 #include "fillit.h"
 #include "libft.h"

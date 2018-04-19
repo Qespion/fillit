@@ -3,33 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:42:19 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/19 13:52:27 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:54:32 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** TODO:	[X] Set loop functions pointer in checkshape
-**			[X] Free all malloc in strerror
-**			[X] Check chars in square (4# 4\n 12.)
-**			[X] Check I shape
-**			[X] Check J shape
-**			[X] Check L shape
-**			[X] Check O shape
-**			[X] Check S shape
-**			[X] Check T shape
-**			[X] Check Z shape
-**			[X] Set letter
-**
-** FUNC:	exit
-**			open / close
-**			malloc / free
-**			write / read
-**
-** FIXME:	[X] Segv l45 for 3rd struct
-*/
 
 #include "fillit.h"
 #include "libft.h"

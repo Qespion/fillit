@@ -3,28 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/19 13:51:49 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:54:05 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
 
-# include <stdlib.h> 	// exit, malloc, free
-# include <fcntl.h>		// open
-# include <unistd.h>	// read, write, close
-# include <stdio.h>		// printf
+# include <stdlib.h>
+# include <fcntl.h>
+# include <unistd.h>
 
 typedef struct		s_shapes
-{								//  0    1    2    3    4    5    6
-	int				shape;		// 'I', 'J', 'L', 'O', 'S', 'T', 'Z'
+{
+	int				shape;
 	int				x;
 	int				y;
-	int				direction;	// 'N', 'E', 'S', 'W'
-	int				set;		// 1 or 0
+	int				direction;
+	int				set;
 	int				letter;
 }					t_shapes;
 
@@ -53,6 +52,7 @@ int		checkchars(char *square);
 /*
 ** Find.c
 */
+
 int		start(t_shapes *shapes);
 
 /*
