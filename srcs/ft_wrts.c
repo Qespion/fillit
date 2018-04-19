@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wrts.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 15:32:34 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/19 13:46:55 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 14:09:08 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_wrtsv(char **map, t_shapes *shapes, int p_nbr)
 	{
 		map[shapes[p_nbr].y][shapes[p_nbr].x] = '.';
 		map[shapes[p_nbr].y + 1][shapes[p_nbr].x] = '.';
-		map[shapes[p_nbr].y + 1][shapes[p_nbr].x + 1]= '.';
+		map[shapes[p_nbr].y + 1][shapes[p_nbr].x + 1] = '.';
 		map[shapes[p_nbr].y + 2][shapes[p_nbr].x + 1] = '.';
 		shapes[p_nbr].set = 0;
 	}

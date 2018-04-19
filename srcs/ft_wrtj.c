@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wrtj.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 16:39:17 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/19 13:46:31 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 14:08:59 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_wrtje(char **map, t_shapes *shapes, int p_nbr)
 	if (shapes[p_nbr].set == 0)
 	{
 		map[shapes[p_nbr].y][shapes[p_nbr].x] = shapes[p_nbr].letter;
-		map[shapes[p_nbr].y + 1][shapes[p_nbr].x]= shapes[p_nbr].letter;
+		map[shapes[p_nbr].y + 1][shapes[p_nbr].x] = shapes[p_nbr].letter;
 		map[shapes[p_nbr].y + 1][shapes[p_nbr].x + 1] = shapes[p_nbr].letter;
 		map[shapes[p_nbr].y + 1][shapes[p_nbr].x + 2] = shapes[p_nbr].letter;
 		shapes[p_nbr].set = 1;

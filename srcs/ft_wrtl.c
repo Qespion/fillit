@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_wrtl.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
+/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 16:49:31 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/19 13:46:36 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 14:08:47 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_wrtls(char **map, t_shapes *shapes, int p_nbr)
 		map[shapes[p_nbr].y][shapes[p_nbr].x] = shapes[p_nbr].letter;
 		map[shapes[p_nbr].y][shapes[p_nbr].x + 1] = shapes[p_nbr].letter;
 		map[shapes[p_nbr].y + 1][shapes[p_nbr].x + 1] = shapes[p_nbr].letter;
-		map[shapes[p_nbr].y + 2][shapes[p_nbr].x + 1]= shapes[p_nbr].letter;
+		map[shapes[p_nbr].y + 2][shapes[p_nbr].x + 1] = shapes[p_nbr].letter;
 		shapes[p_nbr].set = 1;
 	}
 	else
