@@ -6,12 +6,32 @@
 /*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 16:43:56 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/19 13:48:40 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/19 14:41:38 by groussel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include "libft.h"
+
+void	ft_print(char **map)
+{
+	int	r;
+	int	i;
+
+	r = 0;
+	i = 0;
+	while (map[r])
+	{
+		while (map[r][i])
+		{
+			ft_putchar(map[r][i]);
+			i++;
+		}
+		ft_putchar('\n');
+		i = 0;
+		r++;
+	}
+}
 
 void	ft_strerror(t_shapes *shapes, char *square, int fd, int code)
 {
