@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/19 12:08:14 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:34:20 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,13 +171,13 @@ int		checkZE(char **tab);
 ** Test on tab
 */
 
-int	ft_putT(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
-int	ft_putS(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
-int	ft_putZ(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
-int	ft_putO(int x, int y, char **map);
-int	ft_putL(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
-int	ft_putJ(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
-int	ft_putI(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putt(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
+int	ft_puts(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putz(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
+int	ft_puto(int x, int y, char **map);
+int	ft_putl(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putj(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
+int	ft_puti(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
 int	ft_is_valid(char **map, int x, int y);
 int	ft_sqrt(int nb);
 

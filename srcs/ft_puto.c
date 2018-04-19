@@ -6,13 +6,13 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/12 10:02:03 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/13 10:19:14 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:30:38 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int	ft_putO(int x, int y, char **map)
+int	ft_puto(int x, int y, char **map)
 {
 	int	is_valid;
 
