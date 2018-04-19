@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/19 11:59:47 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 12:06:13 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,25 +100,25 @@ int	ft_is_valid(char **map, int x, int y)
 	return (0);
 }
 
-int	ft_trypiece(t_shapes *shapes, char **map, int p_nbr, int x, int y)
+int	ft_trypiece(t_shapes *shapes, char **map, int p_nbr, t_pos *xy)
 {
 	int valid;
 
 	valid = 0;
 	if (shapes[p_nbr].shape == 0)
-		valid = ft_putI(x, y, map, shapes, p_nbr);
+		valid = ft_putI(xy, map, shapes, p_nbr);
 	else if (shapes[p_nbr].shape == 1)
-		valid = ft_putJ(x, y, map, shapes, p_nbr);
+		valid = ft_putJ(xy, map, shapes, p_nbr);
 	else if (shapes[p_nbr].shape == 2)
-		valid = ft_putL(x, y, map, shapes, p_nbr);
+		valid = ft_putL(xy, map, shapes, p_nbr);
 	else if (shapes[p_nbr].shape == 3)
-		valid = ft_putO(x, y, map);
+		valid = ft_putO(xy->x, xy-> y, map);
 	else if (shapes[p_nbr].shape == 4)
-		valid = ft_putS(x, y, map, shapes, p_nbr);
+		valid = ft_putS(xy, map, shapes, p_nbr);
 	else if (shapes[p_nbr].shape == 5)
-		valid = ft_putT(x, y, map, shapes, p_nbr);
+		valid = ft_putT(xy, map, shapes, p_nbr);
 	else if (shapes[p_nbr].shape == 6)
-		valid = ft_putZ(x, y, map, shapes, p_nbr);
+		valid = ft_putZ(xy, map, shapes, p_nbr);
 	return (valid);
 }
 

@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 21:19:09 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/19 10:09:55 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 12:05:13 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,17 +91,17 @@ int	ft_putjw(int x, int y, char **map)
 	return (0);
 }
 
-int	ft_putJ(int x, int y, char **map, t_shapes *shapes, int p_nbr)
+int	ft_putJ(t_pos *xy, char **map, t_shapes *shapes, int p_nbr)
 {
 	int	is_valid;
 
 	if (shapes[p_nbr].direction == 0)
-		is_valid = ft_putjn(x, y, map);
+		is_valid = ft_putjn(xy->x, xy->y, map);
 	if (shapes[p_nbr].direction == 1)
-		is_valid = ft_putje(x, y, map);
+		is_valid = ft_putje(xy->x, xy->y, map);
 	if (shapes[p_nbr].direction == 2)
-		is_valid = ft_putjs(x, y, map);
+		is_valid = ft_putjs(xy->x, xy->y, map);
 	if (shapes[p_nbr].direction == 3)
-		is_valid = ft_putjw(x, y, map);
+		is_valid = ft_putjw(xy->x, xy->y, map);
 	return (is_valid);
 }

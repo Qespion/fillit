@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puti.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 16:58:26 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/16 13:56:58 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/19 12:04:32 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,15 @@ int	ft_putie(int x, int y, char **map)
 	return (0);
 }
 
-int	ft_putI(int x, int y, char **map, t_shapes *shapes, int p_nbr)
+int	ft_putI(t_pos *xy, char **map, t_shapes *shapes, int p_nbr)
 {
 	int	is_valid;
 
 	is_valid = 0;
 	if (shapes[p_nbr].direction == 0)
-		is_valid = ft_putin(x, y, map);
+		is_valid = ft_putin(xy->x, xy->y, map);
 	else if (shapes[p_nbr].direction == 1)
-		is_valid = ft_putie(x, y, map);
+		is_valid = ft_putie(xy->x, xy->y, map);
 	if (is_valid == 1)
 		return (1);
 	return (0);

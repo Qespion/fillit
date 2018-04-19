@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/19 11:52:58 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 12:08:14 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,13 +171,13 @@ int		checkZE(char **tab);
 ** Test on tab
 */
 
-int	ft_putT(int x, int y, char **map, t_shapes *shapes, int p_nbr);
-int	ft_putS(int x, int y, char **map, t_shapes *shapes, int p_nbr);
-int	ft_putZ(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putT(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putS(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putZ(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
 int	ft_putO(int x, int y, char **map);
-int	ft_putL(int x, int y, char **map, t_shapes *shapes, int p_nbr);
-int	ft_putJ(int x, int y, char **map, t_shapes *shapes, int p_nbr);
-int	ft_putI(int x, int y, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putL(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putJ(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
+int	ft_putI(t_pos *xy, char **map, t_shapes *shapes, int p_nbr);
 int	ft_is_valid(char **map, int x, int y);
 int	ft_sqrt(int nb);
 
@@ -200,7 +200,7 @@ void	ft_wrtJ(char **map, t_shapes *shapes, int p_nbr);
 void	ft_solve(char **map, t_shapes *shapes, int p_nbr, t_pos *xy);
 char	**ft_bigger_pg(char **map);
 void	ft_free_tab(char **tab);
-int		ft_trypiece(t_shapes *shapes, char **map, int p_nbr, int x, int y);
+int		ft_trypiece(t_shapes *shapes, char **map, int p_nbr, t_pos *xy);
 void	ft_mod_tab(char **map, t_shapes *shapes, int p_nbr);
 void	ft_print(char **map);
 

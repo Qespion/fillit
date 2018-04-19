@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: groussel <groussel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/12 13:57:21 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/15 20:59:04 by groussel         ###   ########.fr       */
+/*   Updated: 2018/04/19 12:07:14 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,19 +91,19 @@ int	ft_puttw(int x, int y, char **map)
 	return (0);
 }
 
-int	ft_putT(int x, int y, char **map, t_shapes *shapes, int p_nbr)
+int	ft_putT(t_pos *xy, char **map, t_shapes *shapes, int p_nbr)
 {
 	int	is_valid;
 
 	is_valid = 0;
 	if (shapes[p_nbr].direction == 0)
-		is_valid = ft_puttn(x, y, map);
+		is_valid = ft_puttn(xy->x, xy->y, map);
 	if (shapes[p_nbr].direction == 1)
-		is_valid = ft_putte(x, y, map);
+		is_valid = ft_putte(xy->x, xy->y, map);
 	if (shapes[p_nbr].direction == 2)
-		is_valid = ft_putts(x, y, map);
+		is_valid = ft_putts(xy->x, xy->y, map);
 	if (shapes[p_nbr].direction == 3)
-		is_valid = ft_puttw(x, y, map);
+		is_valid = ft_puttw(xy->x, xy->y, map);
 	if (is_valid == 1)
 		return (1);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 14:21:54 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/19 11:59:46 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 12:09:02 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_solve(char **map, t_shapes *shapes, int p_nbr, t_pos *xy)
 {
 	while (shapes[p_nbr].shape >= 0)
 	{
-		while (ft_trypiece(shapes, map, p_nbr, xy->x, xy->y) == 0)
+		while (ft_trypiece(shapes, map, p_nbr, xy) == 0)
 		{
 			xy->x++;
 			if ((size_t)xy->x >= ft_strlen(map[0]))
@@ -77,7 +77,7 @@ void	ft_solve(char **map, t_shapes *shapes, int p_nbr, t_pos *xy)
 				ft_mod_tab(map, shapes, p_nbr);
 			}
 		}
-		if (ft_trypiece(shapes, map, p_nbr, xy->x, xy->y))
+		if (ft_trypiece(shapes, map, p_nbr, xy))
 		{
 			shapes[p_nbr].x = xy->x;
 			shapes[p_nbr].y = xy->y;
