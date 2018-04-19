@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:42:19 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/17 14:09:02 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 10:02:39 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		checkfile(t_shapes *shapes, char **square, int fd)
 	i = -1;
 	while ((bytes = read(fd, *square, 20)) > 0)
 	{
-		if ((shapes[++i].shape = checkshape(*square)) >= 0)		// if valid, set shape in struct
+		if ((shapes[++i].shape = checkshape(*square)) >= 0)
 		{
 			shapes[i].x = 0;
 			shapes[i].y = 0;
@@ -51,12 +51,12 @@ int		checkfile(t_shapes *shapes, char **square, int fd)
 			shapes[i].set = 0;
 			shapes[i].letter = 'A' + i;
 		}
-		else													// if not valid, exit
+		else
 			ft_strerror(shapes, *square, fd, 2);
-		if ((bytes = read(fd, &space, 1)) > 0)					// pass the empty line
+		if ((bytes = read(fd, &space, 1)) > 0)
 			;
 	}
-	shapes[++i].shape = -1;										// stop int
+	shapes[++i].shape = -1;
 	return (1);
 }
 
@@ -105,9 +105,9 @@ int		checkdir(char *square)
 	return (-1);
 }
 
-int		checkchars(char *square)									// if correct numbers of chars
-{																	// and \n set at the correct position
-	int		i;														// return 1, else return 0
+int		checkchars(char *square)
+{
+	int		i;
 	int		dot;
 	int		rl;
 	int		sharpe;

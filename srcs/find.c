@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/17 14:14:06 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 11:16:12 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ char	**ft_playground(int p_nbr)
 	while (ft_sqrt(base) == 0)
 		base++;
 	base = ft_sqrt(base);
-	//printf("base du tableau: %d\n", base);
 	if (!(tab = (char**)malloc(sizeof(char*) * (base + 1))))
 		return (NULL);
 	while (i < base)
@@ -94,7 +93,7 @@ int	ft_is_valid(char **map, int x, int y)
 	int	r;
 
 	r = ft_strlen(map[0]);
-	if (x < 0 || y < 0 || y >= r || x >= r)
+	if (x >= r || y >= r || x < 0 || y < 0)
 		return (0);
 	if (map[y][x] == '.')
 		return (1);
@@ -106,9 +105,6 @@ int	ft_trypiece(t_shapes *shapes, char **map, int p_nbr, int x, int y)
 	int valid;
 
 	valid = 0;
-	//printf("%d\n",p_nbr);
-	//printf("--%d ", shapes[p_nbr].x);
-	//printf("%d--\n", shapes[p_nbr].y);
 	if (shapes[p_nbr].shape == 0)
 		valid = ft_putI(x, y, map, shapes, p_nbr);
 	else if (shapes[p_nbr].shape == 1)
@@ -130,15 +126,16 @@ int		start(t_shapes *shapes)
 {
 	char	**map;
 	int		p_nbr;
-	int		r;
-	int		i;
+	t_pos	*xy;
 
-	r = 0;
-	i = 0;
+	if (!(xy = (t_pos*)malloc(sizeof(xy))))
+		return (0);
+	xy->x = 0;
+	xy->y = 846;
 	p_nbr = 0;
+	printf ("%s\n", "座標");
 	while (shapes[p_nbr].shape != -1)
 		p_nbr++;
-	//printf("nombre de piece: %d\n", p_nbr);
 	map = ft_playground(p_nbr);
 	ft_solve(map, shapes, 0, 0, 0);
 	return (0);

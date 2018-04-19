@@ -6,13 +6,13 @@
 #    By: oespion <oespion@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/07 16:25:30 by groussel          #+#    #+#              #
-#    Updated: 2018/04/17 14:12:47 by oespion          ###   ########.fr        #
+#    Updated: 2018/04/19 10:27:56 by oespion          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	fillit
 
-FLAGS	=	-Wall -Wextra -Werror -O3 -fsanitize=address
+FLAGS	=	-Wall -Wextra -Werror
 
 SRC_DIR	=	srcs/
 OBJ_DIR =	objs/
@@ -53,13 +53,13 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ_DIR) $(OBJS)
 			make -C libft/
-			gcc -g $(FLAGS) $(OBJS) -L libft/ -lft -o $(NAME)
+			gcc $(FLAGS) $(OBJS) -L libft/ -lft -o $(NAME)
 
 $(OBJ_DIR):
 			mkdir -p $(OBJ_DIR)
 
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
-			gcc -g $(FLAGS) -c $< -o $@ -I $(INC_DIR)
+			gcc $(FLAGS) -c $< -o $@ -I $(INC_DIR)
 
 clean:
 			make -C libft/ clean

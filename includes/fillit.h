@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/16 15:35:23 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 10:56:07 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ typedef struct		s_shapes
 	int				set;		// 1 or 0
 	int				letter;
 }					t_shapes;
+
+typedef struct		s_pos
+{
+	int				x;
+	int				y;
+}					t_pos;
 
 /*
 ** Reset colors
