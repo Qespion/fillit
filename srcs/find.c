@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/19 11:16:12 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 11:59:47 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,12 +131,11 @@ int		start(t_shapes *shapes)
 	if (!(xy = (t_pos*)malloc(sizeof(xy))))
 		return (0);
 	xy->x = 0;
-	xy->y = 846;
+	xy->y = 0;
 	p_nbr = 0;
-	printf ("%s\n", "座標");
 	while (shapes[p_nbr].shape != -1)
 		p_nbr++;
 	map = ft_playground(p_nbr);
-	ft_solve(map, shapes, 0, 0, 0);
+	ft_solve(map, shapes, 0, xy);
 	return (0);
 }
