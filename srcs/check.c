@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:42:19 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/19 10:02:39 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:52:27 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,13 @@ int		checkshape(char *square)
 	if (!checkchars(square))
 		return (-1);
 	tab = ft_strsplit(square, '\n');
-	f[0] = checkI;
-	f[1] = checkJ;
-	f[2] = checkL;
-	f[3] = checkO;
-	f[4] = checkS;
-	f[5] = checkT;
-	f[6] = checkZ;
+	f[0] = checki;
+	f[1] = checkj;
+	f[2] = checkl;
+	f[3] = checko;
+	f[4] = checks;
+	f[5] = checkt;
+	f[6] = checkz;
 	i = -1;
 	while (++i < 7)
 		if (f[i](tab) >= 0)
@@ -91,13 +91,13 @@ int		checkdir(char *square)
 	int		result;
 
 	tab = ft_strsplit(square, '\n');
-	f[0] = checkI;
-	f[1] = checkJ;
-	f[2] = checkL;
-	f[3] = checkO;
-	f[4] = checkS;
-	f[5] = checkT;
-	f[6] = checkZ;
+	f[0] = checki;
+	f[1] = checkj;
+	f[2] = checkl;
+	f[3] = checko;
+	f[4] = checks;
+	f[5] = checkt;
+	f[6] = checkz;
 	i = -1;
 	while (++i < 7)
 		if ((result = f[i](tab)) >= 0)

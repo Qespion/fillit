@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 16:18:25 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/19 11:54:54 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:47:11 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_wrtzh(char **map, t_shapes *shapes, int p_nbr)
 	}
 }
 
-void	ft_wrtZ(char **map, t_shapes *shapes, int p_nbr)
+void	ft_wrtz(char **map, t_shapes *shapes, int p_nbr)
 {
 	if (shapes[p_nbr].direction == 0)
 		ft_wrtzn(map, shapes, p_nbr);

@@ -6,14 +6,14 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 15:32:34 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/19 11:53:30 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:46:55 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-void	ft_wrtSV(char **map, t_shapes *shapes, int p_nbr)
+void	ft_wrtsv(char **map, t_shapes *shapes, int p_nbr)
 {
 	if (shapes[p_nbr].set == 0)
 	{
@@ -33,7 +33,7 @@ void	ft_wrtSV(char **map, t_shapes *shapes, int p_nbr)
 	}
 }
 
-void	ft_wrtSH(char **map, t_shapes *shapes, int p_nbr)
+void	ft_wrtsh(char **map, t_shapes *shapes, int p_nbr)
 {
 	if (shapes[p_nbr].set == 0)
 	{
@@ -53,10 +53,10 @@ void	ft_wrtSH(char **map, t_shapes *shapes, int p_nbr)
 	}
 }
 
-void	ft_wrtS(char **map, t_shapes *shapes, int p_nbr)
+void	ft_wrts(char **map, t_shapes *shapes, int p_nbr)
 {
 	if (shapes[p_nbr].direction == 0)
-		ft_wrtSV(map, shapes, p_nbr);
+		ft_wrtsv(map, shapes, p_nbr);
 	else if (shapes[p_nbr].direction == 1)
-		ft_wrtSH(map, shapes, p_nbr);
+		ft_wrtsh(map, shapes, p_nbr);
 }

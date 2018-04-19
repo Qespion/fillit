@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/07 17:03:12 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/19 13:34:20 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:51:49 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,79 +35,16 @@ typedef struct		s_pos
 }					t_pos;
 
 /*
-** Reset colors
-*/
-# define C_RESET         "\033[0m"
-
-/*
-** Colors
-*/
-# define CT_MAROON		"\033[38;5;1m"
-# define CT_GREEN		"\033[38;5;2m"
-# define CT_OLIVE		"\033[38;5;3m"
-# define CT_NAVY		"\033[38;5;4m"
-# define CT_PURPLE		"\033[38;5;5m"
-# define CT_SILVER		"\033[38;5;7m"
-# define CT_RED			"\033[38;5;9m"
-# define CT_YELLOW		"\033[38;5;11m"
-# define CT_FUCHSIA		"\033[38;5;13m"
-# define CT_AQUA		"\033[38;5;14m"
-# define CT_WHITE		"\033[38;5;15m"
-# define CT_DARKBLUE	"\033[38;5;18m"
-# define CT_DSKYBLUE4	"\033[38;5;25m"
-# define CT_SPRINGREEN4	"\033[38;5;29m"
-# define CT_CYAN1		"\033[38;5;51m"
-# define CT_PURPLE4		"\033[38;5;54m"
-# define CT_MTURQUOISE	"\033[38;5;80m"
-# define CT_LIGHTPINK4	"\033[38;5;95m"
-# define CT_SLATEBLUE1	"\033[38;5;99m"
-# define CT_DEEPPINK4	"\033[38;5;125m"
-# define CT_LSTEELBLUE	"\033[38;5;147m"
-# define CT_DARKORANGE3	"\033[38;5;166m"
-# define CT_SALMON1		"\033[38;5;209m"
-# define CT_ORANGE1		"\033[38;5;214m"
-# define CT_BLACK		"\033[38;5;232m"
-# define CT_THISTLE1	"\033[38;5;225m"
-
-/*
-** Backgrounds colors
-*/
-# define CB_MAROON		"\033[48;5;1m"
-# define CB_GREEN		"\033[48;5;2m"
-# define CB_OLIVE		"\033[48;5;3m"
-# define CB_NAVY		"\033[48;5;4m"
-# define CB_PURPLE		"\033[48;5;5m"
-# define CB_SILVER		"\033[48;5;7m"
-# define CB_RED			"\033[48;5;9m"
-# define CB_YELLOW		"\033[48;5;11m"
-# define CB_FUCHSIA		"\033[48;5;13m"
-# define CB_AQUA		"\033[48;5;14m"
-# define CB_WHITE		"\033[48;5;15m"
-# define CB_DARKBLUE	"\033[48;5;18m"
-# define CB_DSKYBLUE4	"\033[48;5;25m"
-# define CB_SPRINGREEN4	"\033[48;5;29m"
-# define CB_CYAN1		"\033[48;5;51m"
-# define CB_PURPLE4		"\033[48;5;54m"
-# define CB_MTURQUOISE	"\033[48;5;80m"
-# define CB_LIGHTPINK4	"\033[48;5;95m"
-# define CB_SLATEBLUE1	"\033[48;5;99m"
-# define CB_DEEPPINK4	"\033[48;5;125m"
-# define CB_LSTEELBLUE	"\033[48;5;147m"
-# define CB_DARKORANGE3	"\033[48;5;166m"
-# define CB_SALMON1		"\033[48;5;209m"
-# define CB_ORANGE1		"\033[48;5;214m"
-# define CB_BLACK		"\033[48;5;232m"
-# define CB_THISTLE1	"\033[48;5;225m"
-
-/*
 ** Main.c
 */
+
 void	ft_strerror(t_shapes *shapes, char *square, int fd, int code);
 int		setmap(char ***map);
 
 /*
 ** Check.c
 */
+
 int		checkfile(t_shapes *shapes, char **square, int fd);
 int		checkshape(char *square);
 int		checkdir(char *square);
@@ -121,51 +58,63 @@ int		start(t_shapes *shapes);
 /*
 ** Tetrii.c
 */
-int		checkI(char **tab);
-int		checkIN(char **tab);
-int		checkIE(char **tab);
+
+int		checki(char **tab);
+int		checkin(char **tab);
+int		checkie(char **tab);
+
 /*
 ** Tetrij.c
 */
-int		checkJ(char **tab);
-int		checkJN(char **tab);
-int		checkJE(char **tab);
-int		checkJS(char **tab);
-int		checkJW(char **tab);
+
+int		checkj(char **tab);
+int		checkjn(char **tab);
+int		checkje(char **tab);
+int		checkjs(char **tab);
+int		checkjw(char **tab);
+
 /*
 ** Tetril.c
 */
-int		checkL(char **tab);
-int		checkLN(char **tab);
-int		checkLE(char **tab);
-int		checkLS(char **tab);
-int		checkLW(char **tab);
+
+int		checkl(char **tab);
+int		checkln(char **tab);
+int		checkle(char **tab);
+int		checkls(char **tab);
+int		checklw(char **tab);
+
 /*
 ** Tetrio.c
 */
-int		checkO(char **tab);
-int		checkON(char **tab);
+
+int		checko(char **tab);
+int		checkon(char **tab);
+
 /*
 ** Tetrit.c
 */
-int		checkT(char **tab);
-int		checkTN(char **tab);
-int		checkTE(char **tab);
-int		checkTS(char **tab);
-int		checkTW(char **tab);
+
+int		checkt(char **tab);
+int		checktn(char **tab);
+int		checkte(char **tab);
+int		checkts(char **tab);
+int		checktw(char **tab);
+
 /*
 ** Tetris.c
 */
-int		checkS(char **tab);
-int		checkSN(char **tab);
-int		checkSE(char **tab);
+
+int		checks(char **tab);
+int		checksn(char **tab);
+int		checkse(char **tab);
 
 /*
 ** Tetriz.c
 */
-int		checkZ(char **tab);
-int		checkZN(char **tab);
-int		checkZE(char **tab);
+
+int		checkz(char **tab);
+int		checkzn(char **tab);
+int		checkze(char **tab);
 
 /*
 ** Test on tab
@@ -185,13 +134,13 @@ int	ft_sqrt(int nb);
 ** Write functions
 */
 
-void	ft_wrtI(char **map, t_shapes *shapes, int p_nbr);
-void	ft_wrtS(char **map, t_shapes *shapes, int p_nbr);
-void	ft_wrtT(char **map, t_shapes *shapes, int p_nbr);
-void	ft_wrtZ(char **map, t_shapes *shapes, int p_nbr);
-void	ft_wrtO(char **map, t_shapes *shapes, int p_nbr);
-void	ft_wrtL(char **map, t_shapes *shapes, int p_nbr);
-void	ft_wrtJ(char **map, t_shapes *shapes, int p_nbr);
+void	ft_wrti(char **map, t_shapes *shapes, int p_nbr);
+void	ft_wrts(char **map, t_shapes *shapes, int p_nbr);
+void	ft_wrtt(char **map, t_shapes *shapes, int p_nbr);
+void	ft_wrtz(char **map, t_shapes *shapes, int p_nbr);
+void	ft_wrto(char **map, t_shapes *shapes, int p_nbr);
+void	ft_wrtl(char **map, t_shapes *shapes, int p_nbr);
+void	ft_wrtj(char **map, t_shapes *shapes, int p_nbr);
 
 /*
 ** Solve

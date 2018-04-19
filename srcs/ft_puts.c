@@ -6,17 +6,19 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/12 14:43:38 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/19 13:34:38 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:41:18 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-/* #
+/*
+** #
 ** ##
 **  #
 */
+
 int	ft_putsv(int x, int y, char **map)
 {
 	int	i;
@@ -35,9 +37,11 @@ int	ft_putsv(int x, int y, char **map)
 	return (0);
 }
 
-/*  ##
+/*
+**  ##
 ** ##
 */
+
 int	ft_putsh(int x, int y, char **map)
 {
 	int	i;

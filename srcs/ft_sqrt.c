@@ -6,13 +6,13 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 18:43:27 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/14 10:51:01 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:46:09 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int	ft_sqrt(int nb)
+int		ft_sqrt(int nb)
 {
 	int	r;
 

@@ -6,7 +6,7 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 14:21:54 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/19 12:12:55 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:52:49 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,19 @@ void	ft_print(char **map)
 void	ft_mod_tab(char **map, t_shapes *shapes, int p_nbr)
 {
 	if (shapes[p_nbr].shape == 0)
-		ft_wrtI(map, shapes, p_nbr);
+		ft_wrti(map, shapes, p_nbr);
 	if (shapes[p_nbr].shape == 1)
-		ft_wrtJ(map, shapes, p_nbr);
+		ft_wrtj(map, shapes, p_nbr);
 	if (shapes[p_nbr].shape == 2)
-		ft_wrtL(map, shapes, p_nbr);
+		ft_wrtl(map, shapes, p_nbr);
 	if (shapes[p_nbr].shape == 3)
-		ft_wrtO(map, shapes, p_nbr);
+		ft_wrto(map, shapes, p_nbr);
 	if (shapes[p_nbr].shape == 4)
-		ft_wrtS(map, shapes, p_nbr);
+		ft_wrts(map, shapes, p_nbr);
 	if (shapes[p_nbr].shape == 5)
-		ft_wrtT(map, shapes, p_nbr);
+		ft_wrtt(map, shapes, p_nbr);
 	if (shapes[p_nbr].shape == 6)
-		ft_wrtZ(map, shapes, p_nbr);
+		ft_wrtz(map, shapes, p_nbr);
 }
 
 void	ft_solve(char **map, t_shapes *shapes, int p_nbr, t_pos *xy)

@@ -6,17 +6,19 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/10 21:19:09 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/19 13:29:59 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:40:07 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-/*  #
+/*
+**  #
 **  #
 ** ##
 */
+
 int	ft_putjn(int x, int y, char **map)
 {
 	int	is_valid;
@@ -33,9 +35,11 @@ int	ft_putjn(int x, int y, char **map)
 	return (0);
 }
 
-/*  #
+/*
+**	#
 **  ###
 */
+
 int	ft_putjs(int x, int y, char **map)
 {
 	int	is_valid;
@@ -52,10 +56,12 @@ int	ft_putjs(int x, int y, char **map)
 	return (0);
 }
 
-/*  ##
+/*
+**  ##
 **  #
 **  #
 */
+
 int	ft_putje(int x, int y, char **map)
 {
 	int	is_valid;
@@ -72,9 +78,11 @@ int	ft_putje(int x, int y, char **map)
 	return (0);
 }
 
-/*  ###
+/*
+**	###
 **    #
 */
+
 int	ft_putjw(int x, int y, char **map)
 {
 	int	is_valid;

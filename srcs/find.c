@@ -6,26 +6,9 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 03:52:17 by groussel          #+#    #+#             */
-/*   Updated: 2018/04/19 13:29:45 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:37:05 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** TODO:	[ ] Start at the top left
-**			[ ] If you can't put, x++
-**			[ ] If space between first and second shape, x = 0 and y++
-**			[ ] If still impossible, backtracking (reser letters, pass to next shape)
-**			https://medium.com/@andreaiacono/backtracking-explained-7450d6ef9e1a
-**			https://www.wikiwand.com/fr/Algorithme_de_remplissage_par_diffusion
-**			[ ] If still impossible (shape reach border), add 1*1 to the map
-**
-** FUNC:	exit
-**			open / close
-**			malloc / free
-**			write / reads
-**
-** FIXME:	[ ] Nothing yet
-*/
 
 #include "fillit.h"
 #include "libft.h"
@@ -88,7 +71,7 @@ char	**ft_playground(int p_nbr)
 	return (tab);
 }
 
-int	ft_is_valid(char **map, int x, int y)
+int		ft_is_valid(char **map, int x, int y)
 {
 	int	r;
 
@@ -100,7 +83,7 @@ int	ft_is_valid(char **map, int x, int y)
 	return (0);
 }
 
-int	ft_trypiece(t_shapes *shapes, char **map, int p_nbr, t_pos *xy)
+int		ft_trypiece(t_shapes *shapes, char **map, int p_nbr, t_pos *xy)
 {
 	int valid;
 
@@ -112,7 +95,7 @@ int	ft_trypiece(t_shapes *shapes, char **map, int p_nbr, t_pos *xy)
 	else if (shapes[p_nbr].shape == 2)
 		valid = ft_putl(xy, map, shapes, p_nbr);
 	else if (shapes[p_nbr].shape == 3)
-		valid = ft_puto(xy->x, xy-> y, map);
+		valid = ft_puto(xy->x, xy->y, map);
 	else if (shapes[p_nbr].shape == 4)
 		valid = ft_puts(xy, map, shapes, p_nbr);
 	else if (shapes[p_nbr].shape == 5)

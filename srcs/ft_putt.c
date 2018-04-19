@@ -6,14 +6,15 @@
 /*   By: oespion <oespion@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/12 13:57:21 by oespion           #+#    #+#             */
-/*   Updated: 2018/04/19 13:32:53 by oespion          ###   ########.fr       */
+/*   Updated: 2018/04/19 13:41:43 by oespion          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-/*  #
+/*
+**  #
 ** ###
 */
 int	ft_puttn(int x, int y, char **map)
@@ -32,7 +33,8 @@ int	ft_puttn(int x, int y, char **map)
 	return (0);
 }
 
-/* #
+/*
+** #
 ** ##
 ** #
 */
@@ -52,7 +54,8 @@ int	ft_putte(int x, int y, char **map)
 	return (0);
 }
 
-/* ###
+/*
+** ###
 **  #
 */
 int	ft_putts(int x, int y, char **map)
@@ -71,10 +74,12 @@ int	ft_putts(int x, int y, char **map)
 	return (0);
 }
 
-/*  #
+/*
+**  #
 ** ##
 **  #
 */
+
 int	ft_puttw(int x, int y, char **map)
 {
 	int	is_valid;
